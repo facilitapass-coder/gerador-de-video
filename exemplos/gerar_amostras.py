@@ -9,6 +9,7 @@ alfa) e os clips são padrões de teste do ffmpeg.
 
 from __future__ import annotations
 
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -16,7 +17,23 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 PASTA = Path(__file__).parent / "amostras"
-FONTE = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+RAIZ = Path(__file__).resolve().parent.parent
+CANDIDATAS = [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+    "/Library/Fonts/Arial Bold.ttf",
+    "C:/Windows/Fonts/arialbd.ttf",
+]
+FONTE = next((f for f in CANDIDATAS if Path(f).exists()), None)
+
+
+def fonte(tamanho: int):
+    return ImageFont.truetype(FONTE, tamanho) if FONTE else ImageFont.load_default(size=tamanho)
+
+
+def _fonte_ffmpeg() -> str:
+    """Caminho da fonte escapado para o drawtext (C:/... vira C\\:/...)."""
+    return FONTE.replace(":", "\\\\:").replace(" ", "\\\\ ") if FONTE else ""
 
 
 def ff(*args: str) -> None:
@@ -25,11 +42,12 @@ def ff(*args: str) -> None:
 
 def clip(nome: str, w: int, h: int, dur: float, cor: str) -> None:
     rotulo = nome.replace("_", " ").upper()
+    texto = (f",drawtext=fontfile={_fonte_ffmpeg()}:text='{rotulo}':fontsize={h // 12}:fontcolor=white:"
+             f"x=(w-tw)/2:y=(h-th)/2:box=1:boxcolor=black@0.5") if FONTE else ""
     ff("-f", "lavfi", "-i", f"testsrc2=s={w}x{h}:r=30:d={dur}",
        "-f", "lavfi", "-i", f"color=c={cor}:s={w}x{h}:r=30:d={dur}",
        "-filter_complex",
-       f"[0:v][1:v]blend=all_mode=overlay:all_opacity=0.6,"
-       f"drawtext=fontfile={FONTE}:text='{rotulo}':fontsize={h // 12}:fontcolor=white:x=(w-tw)/2:y=(h-th)/2:box=1:boxcolor=black@0.5",
+       f"[0:v][1:v]blend=all_mode=overlay:all_opacity=0.6{texto}",
        "-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p", str(PASTA / f"{nome}.mp4"))
 
 
@@ -51,7 +69,7 @@ def logo() -> None:
     img = Image.new("RGB", (900, 200), "black")  # fundo preto de propósito
     d = ImageDraw.Draw(img)
     d.ellipse((20, 30, 160, 170), fill="#E8572A")
-    d.text((190, 55), "LOGO EXEMPLO", font=ImageFont.truetype(FONTE, 80), fill="#E8572A")
+    d.text((190, 55), "LOGO EXEMPLO", font=fonte(80), fill="#E8572A")
     img.save(PASTA / "logo-exemplo-fundo-preto.png")
 
 
@@ -61,8 +79,21 @@ def foto(nome: str, w: int = 1600, h: int = 1200) -> None:
     for y in range(h):
         t = y / h
         d.line([(0, y), (w, y)], fill=(int(40 + 120 * t), int(150 - 60 * t), int(200 - 80 * t)))
-    d.text((60, 60), "FOTO DE TESTE", font=ImageFont.truetype(FONTE, 70), fill="white")
+    d.text((60, 60), "FOTO DE TESTE", font=fonte(70), fill="white")
     img.save(PASTA / nome, quality=90)
+
+
+def marca_teste() -> Path:
+    """Pasta de marca só para teste: marca.yaml real + logo e selo marcadores de posição."""
+    pasta = PASTA / "marca-teste"
+    for sub in ("logo", "selo"):
+        (pasta / sub).mkdir(parents=True, exist_ok=True)
+    shutil.copy(RAIZ / "marca" / "marca.yaml", pasta / "marca.yaml")
+    shutil.copy(PASTA / "logo-exemplo-fundo-preto.png", pasta / "logo" / "laranja-principal.png")
+    selo = Image.new("RGBA", (300, 300), (0, 0, 0, 0))
+    ImageDraw.Draw(selo).ellipse((0, 0, 299, 299), fill="#C9992A")
+    selo.save(pasta / "selo" / "xpert-xcaret.png")
+    return pasta
 
 
 def main() -> int:
@@ -79,7 +110,8 @@ def main() -> int:
     logo()
     foto("piscina_teste.jpg")
     foto("quarto_teste.jpg")
-    print(f"Amostras em {PASTA}")
+    marca_teste()
+    print(f"Amostras em {PASTA} (marca de teste em {PASTA / 'marca-teste'})")
     return 0
 
 

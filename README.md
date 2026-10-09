@@ -4,20 +4,33 @@ Ferramenta da Facilita Pass que transforma roteiro e clips brutos em **Reels pro
 **posts, carrosséis, stories e artes de WhatsApp (PNG)** com a marca aplicada automaticamente.
 Estão prontos os requisitos P0, os P1 que rodam localmente e os P2 de comparação de versões, fila e agenda. Tudo roda no computador local, sem enviar vídeo para a nuvem.
 
-## Instalação
+## Instalação no seu computador
 
-Requisitos: Python 3.10+, ffmpeg (com ffprobe) e Chromium para o Playwright.
+Pré-requisitos: Python 3.10+ e ffmpeg (Mac: `brew install python@3.12 ffmpeg`; Windows: `winget install Python.Python.3.12 Gyan.FFmpeg`).
 
 ```bash
-pip install -e .
-playwright install chromium        # ou: export CHROMIUM_PATH=/caminho/do/chrome
+git clone https://github.com/facilitapass-coder/gerador-de-video.git
+cd gerador-de-video
+bash scripts/instalar.sh --teste          # Mac/Linux
+# Windows (PowerShell): powershell -ExecutionPolicy Bypass -File scripts\instalar.ps1 -Teste
 ```
 
-Depois, uma vez:
+O script cria um ambiente Python isolado (`.venv`), instala as dependências e o Chromium do Playwright, cria as
+pastas `projetos/` e `saida/` e, com `--teste`, gera imagens e um mapa de cobertura com mídia sintética.
+Depois, em cada terminal novo: `source .venv/bin/activate` (Windows: `.venv\Scripts\Activate.ps1`).
 
-1. Copie os arquivos da Poppins para `marca/fontes/` (ver `marca/fontes/LEIA-ME.md`).
-2. Copie o logo "Laranja Principal" para `marca/logo/laranja-principal.png` e rode `facilita logo-corrigir` se precisar.
-3. Confira com `facilita marca`.
+Antes da primeira peça real, copie para `marca/` a Poppins (`marca/fontes/`), o logo "Laranja Principal"
+(`marca/logo/`) e, se for usar, o selo Xpert Xcaret (`marca/selo/`). Confira com `facilita marca`.
+
+### Pasta de trabalho de cada peça
+
+```bash
+facilita novo "Xcaret Arte"
+```
+
+Cria `projetos/xcaret-arte/` com `clips/`, `audio/`, `fotos/`, `saida/` e modelos de `roteiro.md`, `clips.yaml` e
+`post.yaml`, mais um `LEIA-ME.md` com os comandos na ordem. A pasta `projetos/` fica fora do git (vídeos brutos são
+grandes e não devem subir para o GitHub).
 
 ## Reels: do roteiro ao MP4
 

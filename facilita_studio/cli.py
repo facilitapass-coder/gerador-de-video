@@ -184,6 +184,17 @@ def cmd_logo(a, marca: Marca) -> int:
     return 0
 
 
+def cmd_novo(a, marca: Marca) -> int:
+    from .projeto import criar
+
+    pasta = criar(a.nome, a.pasta)
+    print(f"Pasta criada: {pasta}")
+    for item in sorted(pasta.iterdir()):
+        print(f"  {item.name}{'/' if item.is_dir() else ''}")
+    print(f"Próximo passo: coloque os vídeos em {pasta / 'clips'} e siga {pasta / 'LEIA-ME.md'}.")
+    return 0
+
+
 def cmd_marca(a, marca: Marca) -> int:
     problemas = marca.verificar_ativos()
     print(f"Marca: {marca.dados['nome']} · pasta {marca.pasta}")
@@ -273,6 +284,11 @@ def construir_parser() -> argparse.ArgumentParser:
     s.add_argument("logo", nargs="?")
     s.add_argument("--limiar", type=int, default=40)
     s.set_defaults(func=cmd_logo)
+
+    s = sub.add_parser("novo", help="cria a pasta de trabalho de uma peça (clips, áudio, fotos, roteiro)")
+    s.add_argument("nome", help='ex.: "Xcaret Arte"')
+    s.add_argument("--pasta", default="projetos", help="onde criar (padrão: projetos/)")
+    s.set_defaults(func=cmd_novo)
 
     s = sub.add_parser("marca", help="confere fonte, logo e cores da marca")
     s.set_defaults(func=cmd_marca)
