@@ -85,6 +85,18 @@ def cmd_montar(a, marca: Marca) -> int:
     return 0
 
 
+def cmd_ajustar(a, marca: Marca) -> int:
+    from .video import ajustes as mod_ajustes
+
+    roteiro = Path(a.roteiro)
+    aj = {} if a.limpar else mod_ajustes.carregar(roteiro)
+    for pedido in a.pedidos:
+        print(f"- {pedido}: {mod_ajustes.interpretar(pedido, aj, marca.video)}")
+    destino = mod_ajustes.salvar(roteiro, aj)
+    print(f"Ajustes em {destino}. Rode 'facilita montar' para gerar a nova versão.")
+    return 0
+
+
 def cmd_legenda(a, marca: Marca) -> int:
     from .video import roteiro as mod_roteiro
     from .video.legenda import salvar_legenda
@@ -99,12 +111,30 @@ def cmd_legenda(a, marca: Marca) -> int:
 def cmd_imagem(a, marca: Marca) -> int:
     from .imagens.gerador import gerar
 
-    r = gerar(a.peca, marca, a.saida, a.formato or None, a.permitir_fonte_substituta, a.manter_2x)
+    r = gerar(a.peca, marca, a.saida, a.formato or None, a.permitir_fonte_substituta, a.manter_2x, variacoes=a.variacoes)
     for s in r["saidas"]:
         print(f"PNG: {s['png']}")
     for av in r["avisos"]:
         print(f"  {av}" if av.startswith("[") else f"  [aviso] {av}")
     print(f"Manifesto: {r['manifesto']}")
+    return 0
+
+
+def cmd_capa(a, marca: Marca) -> int:
+    from .imagens.capa import gerar_capa
+
+    r = gerar_capa(a.roteiro, a.clips, marca, a.saida, a.bloco, a.quadro, a.titulo, a.permitir_fonte_substituta)
+    print(f"Capa: {r['png']} (bloco {r['bloco']}, {r['clip']} em {r['tempo']:.1f}s)")
+    for av in r["avisos"]:
+        print(f"  [aviso] {av}")
+    return 0
+
+
+def cmd_comparar(a, marca: Marca) -> int:
+    from .versoes import comparar
+
+    for linha in comparar(a.antes, a.depois):
+        print(f"- {linha}")
     return 0
 
 
@@ -173,6 +203,12 @@ def construir_parser() -> argparse.ArgumentParser:
             s.add_argument("--permitir-fonte-substituta", action="store_true", help="monta mesmo sem a Poppins instalada")
         s.set_defaults(func=func)
 
+    s = sub.add_parser("ajustar", help='pedidos como "tira o bloco 5" ou "voz mais alta" para a próxima montagem')
+    s.add_argument("roteiro")
+    s.add_argument("pedidos", nargs="*")
+    s.add_argument("--limpar", action="store_true", help="descarta os ajustes anteriores")
+    s.set_defaults(func=cmd_ajustar)
+
     s = sub.add_parser("legenda", help="legenda do post com CTA e lembrete da e-Visa")
     s.add_argument("roteiro")
     s.add_argument("--saida", default="saida")
@@ -184,7 +220,23 @@ def construir_parser() -> argparse.ArgumentParser:
     s.add_argument("--saida", default="saida")
     s.add_argument("--permitir-fonte-substituta", action="store_true", help="gera mesmo sem a Poppins instalada")
     s.add_argument("--manter-2x", action="store_true", help="guarda o PNG em 2× em vez de reduzir")
+    s.add_argument("--variacoes", type=int, default=1, help="gera 2 ou 3 opções de layout para escolha")
     s.set_defaults(func=cmd_imagem)
+
+    s = sub.add_parser("capa", help="capa do Reels: quadro do vídeo com o título")
+    s.add_argument("roteiro")
+    s.add_argument("--clips", required=True)
+    s.add_argument("--bloco", type=int, help="bloco de onde sai o quadro (padrão: o 1º com imagem)")
+    s.add_argument("--quadro", help="tempo dentro do bloco, ex.: 0:02")
+    s.add_argument("--titulo", help="título da capa (padrão: capa_titulo ou título do roteiro)")
+    s.add_argument("--saida", default="saida")
+    s.add_argument("--permitir-fonte-substituta", action="store_true")
+    s.set_defaults(func=cmd_capa)
+
+    s = sub.add_parser("comparar", help="diferenças entre duas versões (manifestos .json ou pastas vNN)")
+    s.add_argument("antes")
+    s.add_argument("depois")
+    s.set_defaults(func=cmd_comparar)
 
     s = sub.add_parser("validar", help="confere marca, regras de oferta e fotos sem gerar nada")
     s.add_argument("arquivo", help="roteiro .md ou peça .yaml")

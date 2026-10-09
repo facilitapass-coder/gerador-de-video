@@ -19,6 +19,12 @@ fonte:
     seminegrito: fontes/Poppins-SemiBold.ttf
     negrito: fontes/Poppins-Bold.ttf
 
+selo:
+  nome: Xpert Xcaret
+  arquivo: selo/xpert-xcaret.png
+  largura_video: 200     # px no Reels 1080×1920
+  largura_imagem: 180    # px nas peças de imagem
+
 logo:
   nome: Laranja Principal
   descricao: horizontal, símbolo e texto na mesma linha
@@ -34,6 +40,17 @@ terminologia:
     certo: Faixa
   - errado: salário fixo
     certo: Valor Fixo Contratual
+
+# Grafia certa de nomes que a legenda não pode errar (corrigida automaticamente).
+dicionario_marca:
+  - Xcaret
+  - Xcaret Arte
+  - Xpert Xcaret
+  - Cadillac
+  - Facilita Pass
+  - Riviera Maya
+  - Playa del Carmen
+  - Cancún
 
 frases_proibidas:
   - condições exclusivas que agência comum não consegue
@@ -82,6 +99,9 @@ video:
   musica_subida_segundos: 2
   respiro_final: 2.0               # segundos depois da última fala
   cta_duracao: 4.0                 # CTA + logo nos últimos N segundos, até o último quadro
+  legendas: false                  # legendas queimadas a partir do texto do roteiro
+  legenda_tamanho: 54
+  legenda_max_caracteres: 32       # por linha; até 2 linhas por frase
   # Zonas cobertas pela interface do Instagram em 1080×1920 (px).
   zona_segura:
     topo: 250

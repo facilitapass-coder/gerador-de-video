@@ -105,4 +105,31 @@ def test_poppins_carregada_quando_instalada(tmp_path, marca):
     assert r["saidas"][0]["poppins_carregada"]
 
 
+@precisa_chromium
+def test_variacoes_e_selo(tmp_path, marca):
+    arq = _peca(tmp_path, modelo="oferta")
+    arq.write_text("selo: true\n" + arq.read_text(encoding="utf-8"), encoding="utf-8")
+    r = gerar(arq, marca, tmp_path / "saida", variacoes=3, permitir_fonte_substituta=True, hoje=HOJE)
+    pngs = [s["png"] for s in r["saidas"]]
+    assert [p[-8:] for p in pngs] == ["var1.png", "var2.png", "var3.png"]
+    with Image.open(pngs[2]) as im:
+        cores = im.convert("RGB").getcolors(1080 * 1350)
+    assert sum(n for n, c in cores if c == (232, 87, 42)) > 50000  # variação 3: fundo laranja
+    with pytest.raises(ErroFacilita):
+        gerar(_peca(tmp_path), marca, tmp_path / "saida", variacoes=2, permitir_fonte_substituta=True, hoje=HOJE)
+
+
+@precisa_chromium
+def test_capa_do_reels(tmp_path, midia, marca):
+    from facilita_studio.imagens.capa import gerar_capa
+
+    from conftest import criar_roteiro
+
+    roteiro, clips = criar_roteiro(tmp_path, midia)
+    r = gerar_capa(roteiro, clips, marca, tmp_path / "saida", bloco=2, permitir_fonte_substituta=True)
+    assert r["bloco"] == 2 and r["clip"] == "piscina_vertical.mp4"
+    with Image.open(r["png"]) as im:
+        assert im.size == (1080, 1920)
+
+
 from pathlib import Path  # noqa: E402

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block estilo %}
+/* O perfil mostra a capa cortada no centro (3:4); título e logo ficam na faixa central. */
+.foto { background-position: center; }
+.veu { background: linear-gradient(180deg, rgba(13,45,94,0) 35%, rgba(13,45,94,.75) 62%, rgba(13,45,94,.2) 82%); }
+.centro { position: absolute; left: 72px; right: 72px; top: 240px; bottom: 240px; display: flex; flex-direction: column; justify-content: flex-end; gap: 28px; padding-bottom: 150px; }
+.centro h1 { font-size: 104px; line-height: 1.02; text-shadow: 0 4px 24px rgba(0,0,0,.35); }
+.logo-capa { position: absolute; top: 300px; left: 72px; background: var(--branco); border-radius: 22px; padding: 16px 26px; }
+.logo-capa img { height: 64px; display: block; }
+{% endblock %}
+{% block corpo %}
+{% if fotos %}<div class="foto" style="background-image:url('{{ fotos[0] }}')"></div>{% endif %}
+<div class="veu"></div>
+<div class="logo-capa"><img src="{{ logo_uri }}" alt=""></div>
+<div class="centro">
+  {% if c.etiqueta %}<span class="etiqueta" style="align-self:flex-start">{{ c.etiqueta }}</span>{% endif %}
+  <h1>{{ c.titulo }}</h1>
+  {% if c.subtitulo %}<h2>{{ c.subtitulo }}</h2>{% endif %}
+</div>
+{% endblock %}

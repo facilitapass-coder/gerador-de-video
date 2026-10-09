@@ -2,7 +2,7 @@
 
 Ferramenta da Facilita Pass que transforma roteiro e clips brutos em **Reels prontos (MP4 1080×1920)** e gera
 **posts, carrosséis, stories e artes de WhatsApp (PNG)** com a marca aplicada automaticamente.
-Esta é a primeira versão: os requisitos P0 do escopo. Tudo roda no computador local, sem enviar vídeo para a nuvem.
+Estão prontos os requisitos P0 e os P1 que rodam localmente, mais a comparação de versões (P2). Tudo roda no computador local, sem enviar vídeo para a nuvem.
 
 ## Instalação
 
@@ -27,8 +27,29 @@ facilita analisar clips/*.mp4 narracao.wav     # quadros a cada 2 s, folha de co
 facilita cobertura roteiro.md --clips clips.yaml   # qual clip cobre cada bloco e o que falta gravar
 facilita montar roteiro.md --clips clips.yaml --previa   # prévia rápida 540×960
 facilita montar roteiro.md --clips clips.yaml            # MP4 final
-facilita legenda roteiro.md                    # legenda com CTA e lembrete da e-Visa
+facilita legenda roteiro.md                    # legenda do post com CTA e lembrete da e-Visa
+facilita capa roteiro.md --clips clips.yaml    # capa do Reels (quadro do vídeo + título)
 ```
+
+### Ajuste por pedido
+
+```bash
+facilita ajustar roteiro.md "tira o bloco 5" "voz mais alta" "com legendas"
+facilita montar roteiro.md --clips clips.yaml       # sai a v02 com os ajustes
+facilita comparar saida/reels/x/x_reels_1080x1920_v01.json saida/reels/x/x_reels_1080x1920_v02.json
+```
+
+Os pedidos ficam em `roteiro.ajustes.yaml` (o roteiro não é alterado). Entendidos: tirar/voltar bloco,
+voz e música mais alta/baixa (música sempre entre 10% e 15%), trocar o clip de um bloco, trocar o texto na tela,
+enquadramento do bloco, fade ou corte seco, com/sem legendas e com/sem selo Xpert Xcaret.
+Um pedido não entendido não grava nada e mostra a lista acima.
+
+### Legendas e selo
+
+- `legendas: true` no roteiro (ou o pedido "com legendas") queima legendas a partir do **texto aprovado da narração**,
+  com os nomes da marca corrigidos (Xcaret, Cadillac…) e um `.srt` ao lado do MP4 para revisão.
+  A transcrição automática do áudio fica para quando um serviço externo for aprovado.
+- `selo: true` coloca o selo Xpert Xcaret (`marca/selo/xpert-xcaret.png`) fora das zonas da interface até o CTA.
 
 - **Roteiro** (`roteiro.md`): cabeçalho com título, narração, música, CTA; um `## Bloco N · Nome` por bloco, com
   `tempo`, `imagem`, `tela`, opcionalmente `clip: arquivo.mp4 @ 0:03` e `enquadramento: centro | foco 0.3 | desfocado`,
@@ -56,7 +77,10 @@ Cada exportação grava ao lado um `.json` com o hash do roteiro, os clips usado
 facilita validar exemplos/oferta-xcaret.yaml        # confere regras sem gerar
 facilita imagem exemplos/oferta-xcaret.yaml --formato feed --formato story --formato whatsapp
 facilita imagem exemplos/carrossel-xcaret.yaml
+facilita imagem exemplos/oferta-xcaret.yaml --variacoes 3   # 3 opções de layout para escolher
 ```
+
+Com `selo: true` na peça, o selo Xpert Xcaret entra no canto superior direito.
 
 A peça é um YAML com `modelo` (`oferta`, `hotel`, `story`, `whatsapp`, `carrossel`), `campos` (título, subtítulo, CTA…),
 `fotos` (com `origem`) e `oferta`. O HTML/CSS é renderizado no Chromium a 2× e reduzido para 1080×1350 (feed) ou
@@ -97,5 +121,5 @@ validade e originais intocados.
 
 ## Fora desta versão
 
-P1/P2 do escopo: legendas queimadas por transcrição, ajuste por pedido, selo Xpert Xcaret, capa, variações de layout,
-imagem por IA, fila por planilha e agenda. Publicação automática, voz, vídeo horizontal e CRM estão fora do escopo.
+Dependem de decisão ou serviço externo: transcrição automática da narração, imagem por IA, sugestão de trilha licenciada
+e sugestão de texto (hoje feita em conversa com o Claude). Ainda por fazer: fila de peças por planilha e agenda (P2). Publicação automática, voz, vídeo horizontal e CRM estão fora do escopo.

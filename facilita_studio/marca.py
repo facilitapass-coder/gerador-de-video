@@ -107,6 +107,25 @@ class Marca:
             )
         return p
 
+    def exigir_selo(self) -> Path:
+        cfg = self.dados.get("selo") or {}
+        p = self.pasta / cfg.get("arquivo", "selo/xpert-xcaret.png")
+        if not p.exists():
+            raise ErroFacilita(f"Selo '{cfg.get('nome', 'Xpert Xcaret')}' não encontrado em {p}. Copie o PNG oficial para lá.")
+        return p
+
+    def corrigir_grafia(self, texto: str) -> str:
+        """Aplica a grafia do dicionário da marca (Xcaret, Cadillac...) sem diferenciar maiúsculas e acentos."""
+        for termo in sorted(self.dados.get("dicionario_marca", []), key=len, reverse=True):
+            alvo = sem_acentos(termo).lower()
+            normal = sem_acentos(texto).lower()
+            pedacos, i = [], 0
+            for m in re.finditer(rf"\b{re.escape(alvo)}\b", normal):
+                pedacos += [texto[i : m.start()], termo]
+                i = m.end()
+            texto = "".join(pedacos) + texto[i:]
+        return texto
+
     def verificar_ativos(self, permitir_fonte_substituta: bool = False) -> list[Problema]:
         problemas = []
         if not self.fonte_completa():

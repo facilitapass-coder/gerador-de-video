@@ -7,6 +7,9 @@ Ferramenta local da Facilita Pass (Python + ffmpeg + Playwright). Textos de inte
 2. Escreva/atualize o `clips.yaml` descrevendo o que aparece em cada clip (e trechos com tempo). Pergunte a origem se não foi dita: sem origem o clip é recusado.
 3. `facilita cobertura` e mostre o mapa ao Richard **antes** de montar, com a lista do que falta gravar.
 4. `facilita montar --previa`, depois o final. Relate as medidas do manifesto (duração, voz acima da música) e os avisos.
+5. Pedidos de mudança do Richard ("tira o bloco 5", "voz mais alta"): `facilita ajustar roteiro.md "<pedido>"`, monte de novo
+   e mostre `facilita comparar` entre as versões. Não edite o roteiro dele para isso.
+6. Com legendas ligadas, peça ao Richard que revise o `.srt` antes de publicar.
 
 ## Regras que não podem ser contornadas
 - Nunca altere arquivos de origem; saídas só em `saida/`.

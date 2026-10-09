@@ -41,12 +41,24 @@ p, li { font-size: 34px; line-height: 1.35; }
 .lista li { padding-left: 44px; position: relative; }
 .lista li::before { content: ""; position: absolute; left: 0; top: .45em; width: 22px; height: 22px; border-radius: 6px; background: var(--laranja); }
 .a-confirmar { color: var(--dourado); font-weight: 600; }
+.selo { position: absolute; top: calc(var(--seg-topo) + 70px); right: 64px; width: {{ selo_largura or 180 }}px; height: auto; }
+/* Variações de layout (--variacoes): v2 cartão branco sobre foto inteira; v3 fundo laranja. */
+.peca.v2 .foto { bottom: 0; border-radius: 0; }
+.peca.v2 .veu { background: linear-gradient(180deg, rgba(13,45,94,0) 45%, rgba(13,45,94,.55) 100%); }
+.peca.v2 .conteudo { background: var(--branco); color: var(--marinho); padding: 40px 44px; border-radius: 36px; left: 48px; right: 48px; box-shadow: 0 16px 48px rgba(0,0,0,.25); }
+.peca.v2 .preco { background: var(--marinho); color: var(--branco); }
+.peca.v2 .chip { border-color: rgba(13,45,94,.35); }
+.peca.v3 { background: var(--laranja); }
+.peca.v3 .veu { background: linear-gradient(180deg, rgba(232,87,42,0) 30%, rgba(232,87,42,.92) 58%, var(--laranja) 66%); }
+.peca.v3 .preco .linha { color: var(--marinho); }
+.peca.v3 .etiqueta, .peca.v3 .cta { background: var(--marinho); }
 {% block estilo %}{% endblock %}
 </style>
 </head>
 <body>
-<div class="peca">
+<div class="peca {{ variante or '' }}">
 {% block corpo %}{% endblock %}
+{% if selo_uri %}<img class="selo" src="{{ selo_uri }}" alt="">{% endif %}
 </div>
 </body>
 </html>

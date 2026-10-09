@@ -98,3 +98,30 @@ def test_reels_sem_poppins_recusado_por_padrao(tmp_path, midia, marca):
     roteiro, clips = criar_roteiro(tmp_path, midia)
     with pytest.raises(ErroFacilita, match="Poppins"):
         montar(roteiro, clips, marca, tmp_path / "saida")
+
+
+def test_reels_com_ajustes_legendas_e_selo(tmp_path, midia, marca):
+    from facilita_studio.video import ajustes as aj
+
+    marca.video["cta_duracao"] = 1.0  # vídeo de teste curto: deixa tempo sem CTA para ver o selo
+    roteiro, clips = criar_roteiro(tmp_path, midia)
+    pedidos: dict = {}
+    for p in ("tira o bloco 1", "com legendas", "com selo", "voz mais alta"):
+        aj.interpretar(p, pedidos, marca.video)
+    aj.salvar(roteiro, pedidos)
+    r = montar(roteiro, clips, marca, tmp_path / "saida", permitir_fonte_substituta=True)
+    assert sondar(r.mp4).duracao == pytest.approx(2.4 + 1.5, abs=0.15)  # bloco 2 (2,4 s) + respiro
+    srt = r.mp4.with_suffix(".srt")
+    assert srt.exists() and "Segunda fala." in srt.read_text(encoding="utf-8")
+    import json
+    m = json.loads(r.manifesto.read_text(encoding="utf-8"))
+    assert m["blocos_removidos"] == [1] and m["selo"] and m["parametros"]["voz_ganho_db"] == 9.0
+    assert [b["bloco"] for b in m["blocos"]] == [2]
+    # selo dourado visível no meio do vídeo, fora da zona da interface
+    quadro = tmp_path / "meio.png"
+    ff("-ss", "1.0", "-i", r.mp4, "-frames:v", "1", quadro)
+    z = marca.video["zona_segura"]
+    x1, y1 = 1080 - z["direita"], 1920 - z["base"] - 200
+    with Image.open(quadro) as im:
+        rr, g, b = im.convert("RGB").getpixel((x1 - 100, y1 - 100))
+    assert rr > 170 and 120 < g < 190 and b < 90

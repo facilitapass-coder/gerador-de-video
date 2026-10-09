@@ -23,6 +23,7 @@ from . import ofertas
 from .fotos import verificar_fotos
 from .render import _ComDefault, fontes_css, html, navegador, renderizar
 
+VARIANTES = ["", "v2", "v3"]  # 1 = padrão; 2 = cartão branco; 3 = fundo laranja
 MODELOS = {"oferta", "hotel", "story", "whatsapp", "carrossel"}
 FORMATO_PADRAO = {"oferta": ["feed"], "hotel": ["feed"], "story": ["story"], "whatsapp": ["whatsapp"], "carrossel": ["feed"]}
 TELAS_CARROSSEL = {"capa", "miolo", "cta"}
@@ -104,7 +105,8 @@ def validar(caminho: Path | str, marca: Marca, hoje: dt.date | None = None) -> t
 
 
 def gerar(caminho: Path | str, marca: Marca, pasta_saida: Path | str = "saida", formatos: list[str] | None = None,
-          permitir_fonte_substituta: bool = False, manter_2x: bool = False, hoje: dt.date | None = None) -> dict:
+          permitir_fonte_substituta: bool = False, manter_2x: bool = False, hoje: dt.date | None = None,
+          variacoes: int = 1) -> dict:
     caminho = Path(caminho)
     problemas, prep = validar(caminho, marca, hoje)
     problemas += marca.verificar_ativos(permitir_fonte_substituta)
@@ -114,6 +116,10 @@ def gerar(caminho: Path | str, marca: Marca, pasta_saida: Path | str = "saida", 
     formatos = formatos or dados.get("formatos") or FORMATO_PADRAO[modelo]
     if modelo == "carrossel" and formatos != ["feed"]:
         raise ErroFacilita("Carrossel sai só no formato feed (1080×1350).")
+    if not 1 <= variacoes <= len(VARIANTES):
+        raise ErroFacilita(f"Variações vão de 1 a {len(VARIANTES)}.")
+    if modelo == "carrossel" and variacoes > 1:
+        raise ErroFacilita("Variações de layout valem para peças avulsas, não para carrossel.")
 
     nome = slug(str(dados.get("peca") or caminho.stem))
     base = Path(pasta_saida) / "imagens" / nome
@@ -125,12 +131,15 @@ def gerar(caminho: Path | str, marca: Marca, pasta_saida: Path | str = "saida", 
 
     logo = marca.exigir_logo()
     aviso = marca.dados["avisos"]["evisa_mexico"] if dados.get("aviso_evisa") else None
-    origens = [caminho, logo] + [f for t in prep["telas"] for f in t["fotos"]]
+    selo = marca.exigir_selo() if dados.get("selo") else None
+    origens = [caminho, logo, selo] + [f for t in prep["telas"] for f in t["fotos"]]
     contexto_base = {
         "fontes_css": fontes_css(marca),
         "cores": marca.cores,
         "logo_uri": logo.resolve().as_uri(),
         "aviso": aviso,
+        "selo_uri": selo.resolve().as_uri() if selo else None,
+        "selo_largura": (marca.dados.get("selo") or {}).get("largura_imagem", 180),
     }
     saidas = []
     total_telas = len(prep["telas"])
@@ -139,13 +148,15 @@ def gerar(caminho: Path | str, marca: Marca, pasta_saida: Path | str = "saida", 
             if formato not in marca.imagens["formatos"]:
                 raise ErroFacilita(f"Formato '{formato}' desconhecido ({', '.join(marca.imagens['formatos'])}).")
             largura, altura = marca.imagens["formatos"][formato]
-            for i, t in enumerate(prep["telas"]):
+            trabalhos = [(i, t, k) for i, t in enumerate(prep["telas"]) for k in range(variacoes)]
+            for i, t, k in trabalhos:
+                sufixo = f"_var{k + 1}" if variacoes > 1 else ""
                 if modelo == "carrossel":
                     mod_html = f"carrossel_{t['tela']['modelo']}"
                     arquivo = pasta / f"{nome}_carrossel_{i + 1:02d}_{largura}x{altura}.png"
                 else:
                     mod_html = _modelo_html(modelo, formato)
-                    arquivo = pasta / f"{nome}_{modelo}_{formato}_{largura}x{altura}.png"
+                    arquivo = pasta / f"{nome}_{modelo}_{formato}_{largura}x{altura}{sufixo}.png"
                 garantir_saida_segura(arquivo, origens)
                 ctx = {
                     **contexto_base,
@@ -157,6 +168,7 @@ def gerar(caminho: Path | str, marca: Marca, pasta_saida: Path | str = "saida", 
                     "fotos": [f.resolve().as_uri() for f in t["fotos"]],
                     "destaques": _destaques(t["tela"].get("destaques")),
                     "numero": f"{i + 1}/{total_telas}" if modelo == "carrossel" else None,
+                    "variante": VARIANTES[k],
                 }
                 if not (modelo == "carrossel" and t["tela"]["modelo"] == "cta"):
                     ctx["aviso"] = None
@@ -166,7 +178,7 @@ def gerar(caminho: Path | str, marca: Marca, pasta_saida: Path | str = "saida", 
                     raise ErroFacilita(f"{arquivo.name}: alguma imagem (foto ou logo) não carregou.")
                 if not info["poppins_carregada"] and not permitir_fonte_substituta:
                     raise ErroFacilita(f"{arquivo.name}: a fonte Poppins não carregou no Chromium.")
-                saidas.append({"formato": formato, "modelo_html": mod_html, **info})
+                saidas.append({"formato": formato, "modelo_html": mod_html, "variacao": k + 1, **info})
 
     manifesto = salvar_manifesto(pasta / "manifesto.json", {
         "tipo": "imagem",

@@ -30,6 +30,10 @@ def marca(tmp_path) -> Marca:
     img = Image.new("RGBA", (600, 150), (0, 0, 0, 255))
     ImageDraw.Draw(img).rectangle((20, 20, 580, 130), fill=(232, 87, 42, 255))
     img.save(pasta / "logo" / "laranja-principal.png")
+    (pasta / "selo").mkdir()
+    selo = Image.new("RGBA", (300, 300), (0, 0, 0, 0))
+    ImageDraw.Draw(selo).ellipse((0, 0, 299, 299), fill=(201, 153, 42, 255))
+    selo.save(pasta / "selo" / "xpert-xcaret.png")
     return Marca.carregar(pasta)
 
 

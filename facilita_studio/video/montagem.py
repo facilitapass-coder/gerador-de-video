@@ -16,10 +16,12 @@ from ..util import (
     proxima_versao,
     salvar_manifesto,
 )
+from . import ajustes as mod_ajustes
 from . import roteiro as mod_roteiro
 from .analise import detectar_silencios, medir_volume
 from .cobertura import Biblioteca, Escolha, carregar_biblioteca, mapear, salvar_relatorio
 from .importacao import InfoMidia, sondar
+from .legendas import escapar_filtro, montar_frases, salvar_ass, salvar_srt
 from .sobreposicoes import cta_png, titulo_png
 
 
@@ -138,18 +140,28 @@ def _render_segmento(seg: Segmento, info: InfoMidia | None, marca: Marca, destin
     return destino
 
 
-def _filtros_audio(total: float, tem_voz: bool, tem_musica: bool, marca: Marca, idx_voz: int, idx_mus: int) -> tuple[list[str], str | None]:
-    v = marca.video
+def _filtros_audio(total: float, tem_voz: bool, tem_musica: bool, params: dict, idx_voz: int, idx_mus: int,
+                   trechos_voz: list[tuple[float, float]] | None = None) -> tuple[list[str], str | None]:
+    """Voz (ganho, redução de ruído, trechos de blocos mantidos) + música (volume com subida final) + mixagem."""
     partes, saidas = [], []
     if tem_voz:
-        ruido = "afftdn=nf=-25," if v.get("reducao_ruido", True) else ""
-        partes.append(
-            f"[{idx_voz}:a]aresample=48000,aformat=channel_layouts=stereo,{ruido}"
-            f"volume={v['voz_ganho_db']}dB,apad,atrim=0:{total:.3f},asetpts=PTS-STARTPTS[voz]"
-        )
+        ruido = "afftdn=nf=-25," if params.get("reducao_ruido", True) else ""
+        base = f"[{idx_voz}:a]aresample=48000,aformat=channel_layouts=stereo,{ruido}volume={params['voz_ganho_db']}dB"
+        fim = f"apad,atrim=0:{total:.3f},asetpts=PTS-STARTPTS[voz]"
+        if trechos_voz:
+            k = len(trechos_voz)
+            rot = "".join(f"[vs{i}]" for i in range(k))
+            cadeia = [f"{base},asplit={k}{rot}" if k > 1 else f"{base}[vs0]"]
+            for i, (a, b) in enumerate(trechos_voz):
+                cadeia.append(f"[vs{i}]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS[vt{i}]")
+            juntar = "".join(f"[vt{i}]" for i in range(k))
+            cadeia.append(f"{juntar}concat=n={k}:v=0:a=1,{fim}" if k > 1 else f"[vt0]{fim}")
+            partes.append(";".join(cadeia))
+        else:
+            partes.append(f"{base},{fim}")
         saidas.append("[voz]")
     if tem_musica:
-        v0, v1, d = v["musica_volume"], v["musica_volume_final"], v["musica_subida_segundos"]
+        v0, v1, d = params["musica_volume"], params["musica_volume_final"], params["musica_subida_segundos"]
         t0 = max(0.0, total - d)
         partes.append(
             f"[{idx_mus}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{total:.3f},asetpts=PTS-STARTPTS,"
@@ -166,14 +178,15 @@ def _filtros_audio(total: float, tem_voz: bool, tem_musica: bool, marca: Marca, 
     return partes, "[a]"
 
 
-def _medir_mix(narracao: Path | None, musica: Path | None, total: float, fala_ate: float, marca: Marca, pasta: Path) -> dict:
+def _medir_mix(narracao: Path | None, musica: Path | None, total: float, fala_ate: float, params: dict, pasta: Path,
+               trechos_voz: list[tuple[float, float]] | None = None) -> dict:
     """Mede voz e música já processadas, no trecho em que há fala."""
     medidas: dict = {}
     for nome, arq, tem_voz, tem_mus in (("voz", narracao, True, False), ("musica", musica, False, True)):
         if not arq:
             continue
         args = ["-i", arq] if tem_voz else ["-stream_loop", "-1", "-i", arq]
-        partes, _ = _filtros_audio(total, tem_voz, tem_mus, marca, 0, 0)
+        partes, _ = _filtros_audio(total, tem_voz, tem_mus, params, 0, 0, trechos_voz)
         grafo = partes[0]
         wav = pasta / f"_medida_{nome}.wav"
         ffmpeg([*args, "-filter_complex", grafo, "-map", f"[{'voz' if tem_voz else 'mus'}]", "-t", f"{total:.3f}", wav], f"medir {nome}")
@@ -195,7 +208,9 @@ def montar(
     caminho_roteiro, caminho_clips, pasta_saida = Path(caminho_roteiro), Path(caminho_clips), Path(pasta_saida)
     rot = mod_roteiro.ler(caminho_roteiro)
     biblioteca, problemas = carregar_biblioteca(caminho_clips, marca)
-    v = marca.video
+    v = dict(marca.video)  # cópia: ajustes por pedido mudam só esta montagem
+    ajustes = mod_ajustes.carregar(caminho_roteiro)
+    removidos = mod_ajustes.aplicar(rot, ajustes, v)
 
     narracao = rot.arquivo("narracao")
     musica = rot.arquivo("musica")
@@ -212,6 +227,18 @@ def montar(
     info_narr = sondar(narracao) if narracao else None
     silencios = detectar_silencios(narracao) if narracao and not all(b.duracao for b in rot.blocos) else []
     mod_roteiro.resolver_tempos(rot, info_narr.duracao if info_narr else None, silencios)
+
+    trechos_voz = None
+    if removidos:
+        # Corta também a narração dos blocos removidos e emenda o resto na sequência.
+        mantidos = [b for b in rot.blocos if b.numero not in removidos]
+        trechos_voz = [(b.inicio, b.fim) for b in mantidos]
+        t = 0.0
+        for b in mantidos:
+            d = b.duracao
+            b.inicio, b.fim = round(t, 3), round(t + d, 3)
+            t += d
+        rot.blocos = mantidos
 
     escolhas = mapear(rot, biblioteca)
     pasta_rel = pasta_saida / "reels" / rot.slug
@@ -269,6 +296,20 @@ def montar(
     idx_mus = n + 1 + (1 if narracao else 0)
     if musica:
         args += ["-stream_loop", "-1", "-i", musica]
+    idx_selo = idx_mus + (1 if musica else 0)
+    selo = marca.exigir_selo() if rot.meta.get("selo") else None
+    if selo:
+        args += ["-loop", "1", "-t", f"{total:.3f}", "-i", selo]
+
+    srt = None
+    extras_video = ""
+    if rot.meta.get("legendas", v.get("legendas", False)):
+        frases = montar_frases(rot.blocos, marca, ate=fala_ate)  # a legenda fica abaixo do cartão do CTA
+        ass = salvar_ass(frases, trabalho / "legendas.ass", marca)
+        srt = salvar_srt(frases, destino.with_suffix(".srt"))
+        fontes = marca.pasta / "fontes"
+        extras_video = f"ass=filename='{escapar_filtro(ass)}'" + (
+            f":fontsdir='{escapar_filtro(fontes)}'" if fontes.exists() else "")
 
     grafo: list[str] = []
     atual, acumulado = "[0:v]", segmentos[0].comprimento
@@ -282,12 +323,24 @@ def montar(
             grafo.append(f"{atual}[{k}:v]concat=n=2:v=1:a=0{rotulo}")
             acumulado += seg.comprimento
         atual = rotulo
+    if selo:
+        z = v["zona_segura"]
+        largura_selo = int((marca.dados.get("selo") or {}).get("largura_video", 200))
+        grafo.append(
+            f"[{idx_selo}:v]format=rgba,scale={largura_selo}:-1[selo];"
+            f"{atual}[selo]overlay=x={v['largura'] - z['direita']}-w:y={v['altura'] - z['base'] - 200}-h:"
+            f"enable='lt(t,{cta_ini:.3f})':format=auto[comselo]"
+        )
+        atual = "[comselo]"
+    if extras_video:
+        grafo.append(f"{atual}{extras_video}[leg]")
+        atual = "[leg]"
     grafo.append(
         f"[{n}:v]format=rgba,fade=in:st={cta_ini:.3f}:d=0.4:alpha=1[cta];"
         f"{atual}[cta]overlay=0:0:enable='gte(t,{cta_ini:.3f})':format=auto,trim=duration={total:.3f},format=yuv420p"
         + (",scale=540:960" if previa else "") + "[vf]"
     )
-    partes_audio, rotulo_audio = _filtros_audio(total, bool(narracao), bool(musica), marca, idx_voz, idx_mus)
+    partes_audio, rotulo_audio = _filtros_audio(total, bool(narracao), bool(musica), v, idx_voz, idx_mus, trechos_voz)
     grafo += partes_audio
     mapas = ["-map", "[vf]"] + (["-map", rotulo_audio] if rotulo_audio else [])
     ffmpeg(
@@ -307,11 +360,13 @@ def montar(
         "cta_inicio": cta_ini,
         "fala_ate": fala_ate,
     }
-    medidas.update(_medir_mix(narracao, musica, total, max(0.5, fala_ate), marca, trabalho))
+    medidas.update(_medir_mix(narracao, musica, total, max(0.5, fala_ate), v, trabalho, trechos_voz))
 
     avisos = list(marca.avisos)
     avisos += [f"Bloco {e.bloco} sem imagem: {e.motivo}" for e in escolhas if not e.coberto]
     avisos += [f"Bloco {e.bloco}: {e.motivo}" for e in escolhas if e.situacao == "curto"]
+    if srt:
+        avisos.append(f"Legendas geradas do texto do roteiro: revise {srt.name} antes de publicar.")
     if "voz_acima_da_musica_db" in medidas and medidas["voz_acima_da_musica_db"] < 6:
         avisos.append(f"Voz só {medidas['voz_acima_da_musica_db']} dB acima da música; considere baixar a trilha.")
 
@@ -332,6 +387,10 @@ def montar(
                 for s in segmentos
             ],
             "clips_usados": [impressao_arquivo(Path(c)) for c in sorted({s.escolha.clip for s in segmentos if s.escolha.clip})],
+            "ajustes": ajustes or None,
+            "blocos_removidos": removidos,
+            "legendas_srt": str(srt) if srt else None,
+            "selo": str(selo) if selo else None,
             "parametros": v,
             "medidas": medidas,
             "avisos": avisos,

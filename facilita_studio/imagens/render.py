@@ -48,7 +48,7 @@ def html(modelo: str, contexto: dict) -> str:
     ctx = dict(contexto)
     ctx["c"] = _ComDefault(ctx.get("c") or {})
     ctx["o"] = _ComDefault(ctx["o"]) if ctx.get("o") else None
-    for chave in ("fotos", "destaques", "numero", "aviso"):
+    for chave in ("fotos", "destaques", "numero", "aviso", "variante", "selo_uri", "selo_largura"):
         ctx.setdefault(chave, None)
     return ambiente().get_template(f"{modelo}.html").render(**ctx)
 
