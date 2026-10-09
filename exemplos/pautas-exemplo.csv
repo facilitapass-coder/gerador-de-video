@@ -1,0 +1,6 @@
+peca;modelo;formatos;titulo;subtitulo;cta;foto;foto_origem;aeroporto_saida;all_inclusive;bagagem;noites;valor_total_casal;parcelas;validade;pagamento;destino;data_publicacao;horario;legenda
+Exemplo Xcaret Arte feed;oferta;feed;Hotel Xcaret Arte;5 noites all inclusive;Comente ARTE;amostras/piscina_teste.jpg;Drive oficial Xcaret;GRU;sim;mão;5;25.980,00;10;15/12/2026;10x sem juros no cartão;México;;;Exemplo com valores fictícios.
+Exemplo Xcaret Arte story;story;story;Hotel Xcaret Arte;Saídas de GRU;Chame no direct;amostras/piscina_teste.jpg;Drive oficial Xcaret;GRU;sim;mão;5;25980;10;15/12/2026;10x sem juros no cartão;México;;;
+Exemplo destaque quartos;hotel;feed;Suítes do Xcaret Arte;Conforto para o casal;Comente ARTE;amostras/quarto_teste.jpg;Drive oficial Xcaret;;;;;;;;;México;;;
+Exemplo WhatsApp;whatsapp;whatsapp;Hotel Xcaret Arte;Fale com uma Xpert Xcaret;Chame no WhatsApp;amostras/piscina_teste.jpg;Drive oficial Xcaret;GRU;sim;mão;5;25980;10;15/12/2026;10x sem juros no cartão;México;;18h30;
+Exemplo sem aeroporto (recusada);oferta;feed;Oferta incompleta;;;amostras/piscina_teste.jpg;Drive oficial Xcaret;;;;;9990;5;15/12/2026;5x sem juros;;;;

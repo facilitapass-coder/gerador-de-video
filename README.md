@@ -2,7 +2,7 @@
 
 Ferramenta da Facilita Pass que transforma roteiro e clips brutos em **Reels prontos (MP4 1080×1920)** e gera
 **posts, carrosséis, stories e artes de WhatsApp (PNG)** com a marca aplicada automaticamente.
-Estão prontos os requisitos P0 e os P1 que rodam localmente, mais a comparação de versões (P2). Tudo roda no computador local, sem enviar vídeo para a nuvem.
+Estão prontos os requisitos P0, os P1 que rodam localmente e os P2 de comparação de versões, fila e agenda. Tudo roda no computador local, sem enviar vídeo para a nuvem.
 
 ## Instalação
 
@@ -87,6 +87,25 @@ A peça é um YAML com `modelo` (`oferta`, `hotel`, `story`, `whatsapp`, `carros
 1080×1920 (story/WhatsApp). Para refazer uma peça, troque o texto no YAML e rode o mesmo comando: sai uma nova
 versão em `saida/imagens/<peca>/v02/`.
 
+## Fila e agenda: um lote de peças a partir da planilha de pautas
+
+```bash
+facilita fila exemplos/pautas-exemplo.csv --inicio 12/10/2026
+facilita fila pautas.xlsx --so-agenda          # só valida e monta a agenda, sem gerar PNG
+```
+
+Uma linha por peça (CSV ou XLSX; colunas listadas em `facilita_studio/fila.py`, ex.: `peca`, `modelo`, `formatos`,
+`titulo`, `foto`, `foto_origem`, campos da oferta, `data_publicacao`, `horario`, `legenda`). Para carrossel, aponte um
+`.yaml` pronto na coluna `arquivo_peca`.
+
+- Cada linha vira um `.yaml` em `saida/fila/<planilha>/pecas/`, que pode ser corrigido e refeito sozinho com `facilita imagem`.
+- Linhas com problema (oferta sem aeroporto, foto sem origem, termo proibido…) são recusadas com o motivo; as outras seguem.
+- A agenda usa os horários da casa (09h00, 12h30, 18h30, em `marca.yaml > agenda`): mantém data e horário pedidos,
+  encaixa as demais no próximo horário livre e passa para o dia seguinte quando o dia enche.
+- Saem `agenda.csv` (abre no Excel), `agenda.md` e `agenda.ics` (importa no Google Agenda/Outlook como lembrete),
+  com a legenda de cada peça (com o lembrete da e-Visa quando o destino é o México). A publicação continua manual,
+  pelo Meta Business Suite.
+
 ## Regras embutidas (`marca/marca.yaml`)
 
 - Paleta marinho `#0D2D5E`, laranja `#E8572A`, dourado `#C9992A`; fonte Poppins; logo "Laranja Principal".
@@ -97,6 +116,7 @@ versão em `saida/imagens/<peca>/v02/`.
 - Fotos, clips e música só de fonte licenciada, com a origem registrada; imagem por IA é recusada nesta versão.
 - Destaque de hotel sem fonte sai marcado "(a confirmar)".
 - Lembrete da e-Visa do México nas legendas e, com `aviso_evisa: true`, na última tela do carrossel.
+- O Chromium renderiza sem acesso à internet: só arquivos locais entram nas peças.
 
 Qualquer violação **recusa** a peça com a explicação do que corrigir.
 
@@ -122,4 +142,4 @@ validade e originais intocados.
 ## Fora desta versão
 
 Dependem de decisão ou serviço externo: transcrição automática da narração, imagem por IA, sugestão de trilha licenciada
-e sugestão de texto (hoje feita em conversa com o Claude). Ainda por fazer: fila de peças por planilha e agenda (P2). Publicação automática, voz, vídeo horizontal e CRM estão fora do escopo.
+e sugestão de texto (hoje feita em conversa com o Claude). Publicação automática, voz, vídeo horizontal e CRM estão fora do escopo.

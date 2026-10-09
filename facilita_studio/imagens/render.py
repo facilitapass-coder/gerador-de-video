@@ -61,8 +61,11 @@ def navegador():
         raise ErroFacilita("Playwright não instalado: pip install playwright") from e
     with sync_playwright() as p:
         caminho = os.environ.get("CHROMIUM_PATH")
+        # Execução local: sem tráfego de fundo do Chromium (atualizações, telemetria).
+        args = ["--disable-background-networking", "--disable-component-update", "--disable-domain-reliability",
+                "--disable-sync", "--no-first-run", "--no-default-browser-check", "--metrics-recording-only"]
         try:
-            b = p.chromium.launch(executable_path=caminho) if caminho else p.chromium.launch()
+            b = p.chromium.launch(executable_path=caminho, args=args) if caminho else p.chromium.launch(args=args)
         except Exception as e:  # noqa: BLE001
             raise ErroFacilita(
                 "Não foi possível abrir o Chromium. Rode 'playwright install chromium' "
@@ -81,6 +84,17 @@ def renderizar(browser, conteudo_html: str, destino: Path, largura: int, altura:
     arquivo_html = destino.with_suffix(".html")
     arquivo_html.write_text(conteudo_html, encoding="utf-8")
     pagina = browser.new_page(viewport={"width": largura, "height": altura}, device_scale_factor=escala)
+    externos: list[str] = []
+
+    def _so_local(rota):
+        url = rota.request.url
+        if url.startswith(("file:", "data:", "about:")):
+            rota.continue_()
+        else:  # a peça só usa arquivos locais; nada sai para a internet
+            externos.append(url)
+            rota.abort()
+
+    pagina.route("**/*", _so_local)
     try:
         pagina.goto(arquivo_html.resolve().as_uri(), wait_until="load")
         pagina.evaluate("document.fonts.ready.then(() => true)")
@@ -99,4 +113,5 @@ def renderizar(browser, conteudo_html: str, destino: Path, largura: int, altura:
         with Image.open(bruto) as im:
             im.convert("RGB").resize((largura, altura), Image.LANCZOS).save(destino, optimize=True)
         bruto.unlink()
-    return {"png": str(destino), "html": str(arquivo_html), "poppins_carregada": bool(poppins), "imagens_ok": bool(imagens_ok)}
+    return {"png": str(destino), "html": str(arquivo_html), "poppins_carregada": bool(poppins), "imagens_ok": bool(imagens_ok),
+            "bloqueados": externos}

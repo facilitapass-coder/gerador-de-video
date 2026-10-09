@@ -11,6 +11,10 @@ Ferramenta local da Facilita Pass (Python + ffmpeg + Playwright). Textos de inte
    e mostre `facilita comparar` entre as versões. Não edite o roteiro dele para isso.
 6. Com legendas ligadas, peça ao Richard que revise o `.srt` antes de publicar.
 
+## Lote de imagens
+- Planilha de pautas → `facilita fila pautas.csv --so-agenda` primeiro; mostre ao Richard as linhas recusadas e a agenda,
+  depois rode sem `--so-agenda`. Corrija linha recusada na planilha (ou no `.yaml` gerado), não force.
+
 ## Regras que não podem ser contornadas
 - Nunca altere arquivos de origem; saídas só em `saida/`.
 - Não invente fatos de hotel, quarto ou prato: só site oficial ou o que o Richard disse. Sem fonte → "(a confirmar)".

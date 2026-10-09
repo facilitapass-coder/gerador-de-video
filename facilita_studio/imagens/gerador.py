@@ -13,6 +13,7 @@ Exemplo mínimo (ver exemplos/oferta-xcaret.yaml):
 from __future__ import annotations
 
 import datetime as dt
+from contextlib import nullcontext
 from pathlib import Path
 
 import yaml
@@ -106,7 +107,8 @@ def validar(caminho: Path | str, marca: Marca, hoje: dt.date | None = None) -> t
 
 def gerar(caminho: Path | str, marca: Marca, pasta_saida: Path | str = "saida", formatos: list[str] | None = None,
           permitir_fonte_substituta: bool = False, manter_2x: bool = False, hoje: dt.date | None = None,
-          variacoes: int = 1) -> dict:
+          variacoes: int = 1, browser=None) -> dict:
+    """Gera os PNG da peça. `browser` permite reaproveitar um Chromium já aberto (geração em lote)."""
     caminho = Path(caminho)
     problemas, prep = validar(caminho, marca, hoje)
     problemas += marca.verificar_ativos(permitir_fonte_substituta)
@@ -143,7 +145,7 @@ def gerar(caminho: Path | str, marca: Marca, pasta_saida: Path | str = "saida", 
     }
     saidas = []
     total_telas = len(prep["telas"])
-    with navegador() as browser:
+    with (nullcontext(browser) if browser is not None else navegador()) as browser:
         for formato in formatos:
             if formato not in marca.imagens["formatos"]:
                 raise ErroFacilita(f"Formato '{formato}' desconhecido ({', '.join(marca.imagens['formatos'])}).")

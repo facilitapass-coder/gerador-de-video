@@ -138,6 +138,25 @@ def cmd_comparar(a, marca: Marca) -> int:
     return 0
 
 
+def cmd_fila(a, marca: Marca) -> int:
+    import datetime as dt
+
+    from .fila import processar
+
+    inicio = dt.datetime.strptime(a.inicio, "%d/%m/%Y").date() if a.inicio else None
+    r = processar(a.planilha, marca, a.saida, gerar_pngs=not a.so_agenda, inicio=inicio,
+                  permitir_fonte_substituta=a.permitir_fonte_substituta)
+    for it in r["itens"]:
+        print(f"{it.data:%d/%m/%Y} {it.horario}  {it.nome}  ({len(it.pngs)} PNG)")
+    for av in r["avisos_agenda"]:
+        print(f"  [aviso] {av}")
+    for it in r["itens_recusados"]:
+        print(f"RECUSADA linha {it.linha} ({it.nome}):")
+        _imprimir_problemas(erros(it.problemas))
+    print(f"Agenda: {r['agenda']['csv']} · {r['agenda']['ics']}\nRelatório: {r['pasta']}/relatorio.json")
+    return 1 if r["itens_recusados"] else 0
+
+
 def cmd_validar(a, marca: Marca) -> int:
     alvo = Path(a.arquivo)
     if alvo.suffix.lower() in (".md", ".markdown"):
@@ -237,6 +256,14 @@ def construir_parser() -> argparse.ArgumentParser:
     s.add_argument("antes")
     s.add_argument("depois")
     s.set_defaults(func=cmd_comparar)
+
+    s = sub.add_parser("fila", help="gera um lote de peças de uma planilha de pautas e a agenda de publicação")
+    s.add_argument("planilha", help=".csv ou .xlsx (ver exemplos/pautas-exemplo.csv)")
+    s.add_argument("--inicio", help="primeiro dia da agenda, DD/MM/AAAA (padrão: amanhã)")
+    s.add_argument("--so-agenda", action="store_true", help="valida e monta a agenda sem gerar os PNG")
+    s.add_argument("--saida", default="saida")
+    s.add_argument("--permitir-fonte-substituta", action="store_true")
+    s.set_defaults(func=cmd_fila)
 
     s = sub.add_parser("validar", help="confere marca, regras de oferta e fotos sem gerar nada")
     s.add_argument("arquivo", help="roteiro .md ou peça .yaml")

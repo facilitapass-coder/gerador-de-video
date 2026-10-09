@@ -116,3 +116,8 @@ imagens:
     whatsapp: [1080, 1920]
   escala_render: 2
   aeroporto_padrao: GRU
+
+agenda:
+  # Horários de publicação da casa. A fila distribui as peças nesses horários.
+  horarios: ["09:00", "12:30", "18:30"]
+  fuso: America/Sao_Paulo
