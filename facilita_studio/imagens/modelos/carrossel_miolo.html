@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block estilo %}
+.foto { bottom: 45%; border-radius: 0 0 48px 48px; }
+.veu { display: none; }
+{% endblock %}
+{% block corpo %}
+{% if not fotos %}<style>.conteudo { top: 50%; bottom: auto; transform: translateY(-50%); }</style>{% endif %}
+{% if fotos %}<div class="foto" style="background-image:url('{{ fotos[0] }}')"></div>{% endif %}
+{% if numero %}<div class="numero">{{ numero }}</div>{% endif %}
+<div class="conteudo">
+  <h1 style="font-size:64px">{{ c.titulo }}</h1>
+  {% if c.texto %}<p>{{ c.texto }}</p>{% endif %}
+  {% if destaques %}
+  <ul class="lista">
+    {% for d in destaques %}<li>{{ d.texto }}{% if not d.fonte %} <span class="a-confirmar">(a confirmar)</span>{% endif %}</li>{% endfor %}
+  </ul>
+  {% endif %}
+  {% include "_oferta_bloco.html" %}
+</div>
+{% endblock %}

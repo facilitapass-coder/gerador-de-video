@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block corpo %}
+{% if fotos %}<div class="foto" style="background-image:url('{{ fotos[0] }}')"></div>{% endif %}
+<div class="veu"></div>
+<div class="logo-caixa"><img class="logo" src="{{ logo_uri }}" alt=""></div>
+<div class="conteudo">
+  {% if c.etiqueta %}<span class="etiqueta dourada" style="align-self:flex-start">{{ c.etiqueta }}</span>{% endif %}
+  <h1>{{ c.titulo }}</h1>
+  {% if c.subtitulo %}<h2>{{ c.subtitulo }}</h2>{% endif %}
+  {% if destaques %}
+  <ul class="lista">
+    {% for d in destaques %}<li>{{ d.texto }}{% if not d.fonte %} <span class="a-confirmar">(a confirmar)</span>{% endif %}</li>{% endfor %}
+  </ul>
+  {% endif %}
+  {% include "_oferta_bloco.html" %}
+</div>
+{% endblock %}

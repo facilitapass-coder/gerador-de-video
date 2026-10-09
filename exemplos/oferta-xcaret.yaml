@@ -1,0 +1,22 @@
+# EXEMPLO com valores fictícios. Troque os textos e valores e rode:
+#   facilita imagem exemplos/oferta-xcaret.yaml --formato feed --formato story
+peca: Exemplo oferta Xcaret Arte
+modelo: oferta
+campos:
+  etiqueta: Oferta
+  titulo: Hotel Xcaret Arte
+  subtitulo: 5 noites all inclusive na Riviera Maya
+  cta: Comente ARTE
+fotos:
+  - arquivo: amostras/piscina_teste.jpg
+    origem: Drive oficial Xcaret
+oferta:
+  aeroporto_saida: GRU
+  all_inclusive: true
+  bagagem: mão
+  noites: 5
+  valor_total_casal: 25980
+  parcelas: 10
+  validade: 2026-12-15
+  pagamento: 10x sem juros no cartão
+  datas: saídas em fevereiro e março de 2027

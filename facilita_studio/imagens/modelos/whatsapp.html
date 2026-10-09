@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block estilo %}
+.foto { bottom: 42%; }
+.veu { background: linear-gradient(180deg, rgba(13,45,94,0) 30%, rgba(13,45,94,.85) 54%, var(--marinho) 60%); }
+.cta { background: #25D366; }
+{% endblock %}
+{% block corpo %}
+{% if fotos %}<div class="foto" style="background-image:url('{{ fotos[0] }}')"></div>{% endif %}
+<div class="veu"></div>
+<div class="logo-caixa"><img class="logo" src="{{ logo_uri }}" alt=""></div>
+<div class="conteudo">
+  <h1>{{ c.titulo }}</h1>
+  {% if c.subtitulo %}<h2>{{ c.subtitulo }}</h2>{% endif %}
+  {% include "_oferta_bloco.html" %}
+  <div class="cta">{{ c.cta or "Chame no WhatsApp" }}</div>
+</div>
+{% endblock %}

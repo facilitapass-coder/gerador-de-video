@@ -1,0 +1,32 @@
+# Biblioteca de clips do Reels Xcaret Arte.
+# Descreva cada clip olhando a folha de contato (facilita analisar ...).
+# 'origem' é obrigatória e precisa estar em marca.yaml > fontes_licenciadas.
+pasta: ../amostras
+clips:
+  - arquivo: fachada_drone.mp4
+    origem: Gravação do Richard
+    descricao: fachada do hotel vista de drone, chegada
+    tags: [fachada, drone, aérea, entrada]
+  - arquivo: piscina_rooftop.mp4
+    origem: Drive oficial Xcaret
+    descricao: piscina no rooftop com vista para o mar
+    tags: [piscina, rooftop, mar]
+  - arquivo: quarto_suite.mp4
+    origem: Drive oficial Xcaret
+    descricao: quarto suíte com varanda
+    tags: [quarto, suíte, cama, varanda]
+  - arquivo: restaurante_prato.mp4
+    origem: Gravação do Richard
+    descricao: restaurante, prato sendo servido
+    tags: [restaurante, prato, gastronomia, jantar]
+  - arquivo: arte_mural.mp4
+    origem: Gravação do Richard
+    descricao: arte mural no corredor e ateliê
+    tags: [arte, mural, ateliê, corredor]
+    trechos:
+      - {inicio: 0, fim: 5, descricao: mural colorido no corredor}
+      - {inicio: 5, fim: 10, descricao: ateliê com artista pintando}
+  - arquivo: show_noite.mp4
+    origem: Gravação do Richard
+    descricao: show à noite no teatro
+    tags: [show, noite, teatro, música]

@@ -1,0 +1,14 @@
+{# Bloco de preço e condições, montado só a partir de dados validados pelas regras de oferta. #}
+{% if o %}
+<div class="preco">
+  <div class="linha">{{ o.preco_linha }}</div>
+  <div class="total">{{ o.total_linha }}</div>
+</div>
+<div class="chips">
+  <span class="chip">{{ o.saida }}</span>
+  {% if o.noites %}<span class="chip">{{ o.noites }} noites</span>{% endif %}
+  {% if o.all_inclusive %}<span class="chip">{{ o.all_inclusive }}</span>{% endif %}
+  {% if o.bagagem %}<span class="chip">{{ o.bagagem }}</span>{% endif %}
+</div>
+<div class="rodape">{{ o.validade }} · {{ o.pagamento }}{% if o.datas %} · {{ o.datas }}{% endif %}{% if o.condicoes %} · {{ o.condicoes }}{% endif %}</div>
+{% endif %}

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "facilita-studio"
+version = "0.1.0"
+description = "Editor de Reels e gerador de imagens da Facilita Pass (execução local)"
+requires-python = ">=3.10"
+dependencies = [
+  "PyYAML>=6",
+  "Jinja2>=3.1",
+  "Pillow>=10",
+  "numpy>=1.24",
+  "playwright>=1.40",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+facilita = "facilita_studio.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["facilita_studio*"]
+
+[tool.setuptools.package-data]
+"facilita_studio.imagens" = ["modelos/*.html", "modelos/*.css"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

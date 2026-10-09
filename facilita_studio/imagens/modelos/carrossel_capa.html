@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block corpo %}
+{% if fotos %}<div class="foto" style="background-image:url('{{ fotos[0] }}')"></div>{% endif %}
+<div class="veu"></div>
+<div class="logo-caixa"><img class="logo" src="{{ logo_uri }}" alt=""></div>
+{% if numero %}<div class="numero">{{ numero }}</div>{% endif %}
+<div class="conteudo">
+  {% if c.etiqueta %}<span class="etiqueta" style="align-self:flex-start">{{ c.etiqueta }}</span>{% endif %}
+  <h1 style="font-size:88px">{{ c.titulo }}</h1>
+  {% if c.subtitulo %}<h2>{{ c.subtitulo }}</h2>{% endif %}
+  <div class="rodape" style="font-size:28px">Arraste para o lado →</div>
+</div>
+{% endblock %}

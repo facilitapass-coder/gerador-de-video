@@ -1,0 +1,98 @@
+# Configuração da marca Facilita Pass.
+# Fonte: manual da marca, identidade visual no Drive ("ID - Facilita Pass Lazer")
+# e regras definidas pelo Richard. Toda peça (vídeo ou imagem) lê este arquivo.
+
+nome: Facilita Pass
+
+cores:
+  marinho: "#0D2D5E"
+  laranja: "#E8572A"   # laranja/coral
+  dourado: "#C9992A"
+  branco: "#FFFFFF"
+
+fonte:
+  familia: Poppins
+  # Arquivos .ttf da Poppins (licença OFL). Coloque-os em marca/fontes/.
+  arquivos:
+    regular: fontes/Poppins-Regular.ttf
+    medio: fontes/Poppins-Medium.ttf
+    seminegrito: fontes/Poppins-SemiBold.ttf
+    negrito: fontes/Poppins-Bold.ttf
+
+logo:
+  nome: Laranja Principal
+  descricao: horizontal, símbolo e texto na mesma linha
+  arquivo: logo/laranja-principal.png
+
+terminologia:
+  # termo errado (sem diferenciar maiúsculas) -> termo certo
+  - errado: embaixador
+    certo: Xpert Xcaret
+  - errado: embaixadora
+    certo: Xpert Xcaret
+  - errado: nível
+    certo: Faixa
+  - errado: salário fixo
+    certo: Valor Fixo Contratual
+
+frases_proibidas:
+  - condições exclusivas que agência comum não consegue
+  - que agência comum não consegue
+  - melhor preço do mercado
+  - imperdível
+  - só hoje
+  - oportunidade única
+
+tom:
+  max_emojis: 2   # sóbrio e direto, sem excesso de emojis
+
+avisos:
+  evisa_mexico: >-
+    Atenção: desde fevereiro de 2026 a e-Visa é obrigatória para brasileiros
+    que viajam ao México. Solicite antes de embarcar.
+
+# Fontes aceitas para fotos e vídeos. Arquivo sem origem informada é recusado.
+fontes_licenciadas:
+  - Canva Pro
+  - e-agências
+  - Drive oficial Xcaret
+  - Gravação própria Facilita Pass
+  - Gravação do Richard
+
+# Músicas só de fonte com licença para uso comercial em rede social.
+fontes_musica_licenciadas:
+  - Biblioteca comercial do Instagram
+  - Epidemic Sound
+  - Artlist
+  - YouTube Audio Library (uso comercial)
+
+video:
+  largura: 1080
+  altura: 1920
+  fps: 30
+  duracao_maxima: 60
+  crf: 18
+  enquadramento_padrao: centro     # centro | foco | desfocado
+  transicao: corte                 # corte | fade
+  transicao_duracao: 0.3
+  voz_ganho_db: 7                  # ponto de partida: +6 a +8 dB
+  reducao_ruido: true
+  musica_volume: 0.12              # 10–15%
+  musica_volume_final: 0.35        # subida nos 2 s finais
+  musica_subida_segundos: 2
+  respiro_final: 2.0               # segundos depois da última fala
+  cta_duracao: 4.0                 # CTA + logo nos últimos N segundos, até o último quadro
+  # Zonas cobertas pela interface do Instagram em 1080×1920 (px).
+  zona_segura:
+    topo: 250
+    base: 420
+    esquerda: 60
+    direita: 160
+
+imagens:
+  formatos:
+    feed: [1080, 1350]
+    story: [1080, 1920]
+    whatsapp: [1080, 1920]
+  escala_render: 2
+  aeroporto_padrao: GRU

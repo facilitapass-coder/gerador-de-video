@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block estilo %}
+.centro { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 44px; text-align: center; padding: 0 80px; }
+.centro .logo-grande { background: var(--branco); border-radius: 32px; padding: 32px 48px; }
+.centro .logo-grande img { height: 120px; display: block; }
+.centro .cta { align-self: center; font-size: 46px; }
+{% endblock %}
+{% block corpo %}
+{% if numero %}<div class="numero">{{ numero }}</div>{% endif %}
+<div class="centro">
+  <div class="logo-grande"><img src="{{ logo_uri }}" alt=""></div>
+  <h1 style="font-size:64px">{{ c.titulo }}</h1>
+  {% if c.texto %}<p>{{ c.texto }}</p>{% endif %}
+  {% if c.cta %}<div class="cta">{{ c.cta }}</div>{% endif %}
+  {% if o %}<div class="rodape">{{ o.saida }} · {{ o.validade }} · {{ o.pagamento }}</div>{% endif %}
+  {% if aviso %}<div class="rodape">{{ aviso }}</div>{% endif %}
+</div>
+{% endblock %}

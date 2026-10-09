@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+{{ fontes_css|safe }}
+:root {
+  --marinho: {{ cores.marinho }};
+  --laranja: {{ cores.laranja }};
+  --dourado: {{ cores.dourado }};
+  --branco: #ffffff;
+  --w: {{ largura }}px;
+  --h: {{ altura }}px;
+  /* zona segura do Story (cabeçalho e campo de resposta do Instagram) */
+  --seg-topo: {{ 250 if altura == 1920 and seguro_story else 64 }}px;
+  --seg-base: {{ 340 if altura == 1920 and seguro_story else 64 }}px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: var(--w); height: var(--h); overflow: hidden; background: var(--marinho); }
+body { font-family: 'Poppins', 'DejaVu Sans', sans-serif; color: var(--branco); -webkit-font-smoothing: antialiased; }
+.peca { position: relative; width: var(--w); height: var(--h); overflow: hidden; background: var(--marinho); }
+.foto { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.veu { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,45,94,0) 30%, rgba(13,45,94,.92) 72%, var(--marinho) 100%); }
+.logo { height: 76px; display: block; }
+.logo-caixa { position: absolute; top: calc(var(--seg-topo) - 8px); left: 64px; background: var(--branco); border-radius: 22px; padding: 18px 28px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+.etiqueta { display: inline-block; background: var(--laranja); color: var(--branco); font-weight: 600; font-size: 28px; letter-spacing: .04em; text-transform: uppercase; padding: 10px 22px; border-radius: 999px; }
+.etiqueta.dourada { background: var(--dourado); }
+h1 { font-weight: 700; font-size: 76px; line-height: 1.05; letter-spacing: -.01em; }
+h2 { font-weight: 600; font-size: 40px; line-height: 1.2; opacity: .92; }
+p, li { font-size: 34px; line-height: 1.35; }
+.conteudo { position: absolute; left: 64px; right: 64px; bottom: var(--seg-base); display: flex; flex-direction: column; gap: 26px; }
+.preco { background: var(--branco); color: var(--marinho); border-radius: 28px; padding: 28px 36px; display: flex; flex-direction: column; gap: 6px; }
+.preco .linha { font-weight: 700; font-size: 54px; color: var(--laranja); line-height: 1.1; }
+.preco .total { font-weight: 500; font-size: 30px; }
+.chips { display: flex; flex-wrap: wrap; gap: 12px; }
+.chip { border: 2px solid rgba(255,255,255,.6); border-radius: 999px; padding: 8px 20px; font-size: 26px; font-weight: 500; }
+.rodape { font-size: 22px; line-height: 1.35; opacity: .85; }
+.cta { align-self: flex-start; background: var(--laranja); color: var(--branco); font-weight: 700; font-size: 40px; padding: 22px 44px; border-radius: 999px; }
+.numero { position: absolute; top: calc(var(--seg-topo) + 4px); right: 64px; font-weight: 600; font-size: 28px; background: rgba(13,45,94,.75); padding: 10px 20px; border-radius: 999px; }
+.lista { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.lista li { padding-left: 44px; position: relative; }
+.lista li::before { content: ""; position: absolute; left: 0; top: .45em; width: 22px; height: 22px; border-radius: 6px; background: var(--laranja); }
+.a-confirmar { color: var(--dourado); font-weight: 600; }
+{% block estilo %}{% endblock %}
+</style>
+</head>
+<body>
+<div class="peca">
+{% block corpo %}{% endblock %}
+</div>
+</body>
+</html>

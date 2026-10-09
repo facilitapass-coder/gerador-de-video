@@ -1,0 +1,42 @@
+# EXEMPLO de carrossel com valores fictícios: capa, miolo e CTA numerados.
+peca: Exemplo carrossel Xcaret Arte
+modelo: carrossel
+aviso_evisa: true
+campos:
+  titulo: Hotel Xcaret Arte
+  cta: Comente ARTE
+fotos:
+  - arquivo: amostras/piscina_teste.jpg
+    origem: Drive oficial Xcaret
+oferta:
+  aeroporto_saida: GRU
+  all_inclusive: true
+  bagagem: mão
+  noites: 5
+  valor_total_casal: 25980
+  parcelas: 10
+  validade: 2026-12-15
+  pagamento: 10x sem juros no cartão
+telas:
+  - modelo: capa
+    campos:
+      etiqueta: Xpert Xcaret indica
+      titulo: Hotel Xcaret Arte
+      subtitulo: O que está incluído no pacote
+  - modelo: miolo
+    campos:
+      titulo: No pacote
+    fotos:
+      - arquivo: amostras/quarto_teste.jpg
+        origem: Drive oficial Xcaret
+    destaques:
+      - {texto: Aéreo saindo de GRU, fonte: cotação}
+      - {texto: 5 noites all inclusive, fonte: cotação}
+      - {texto: Traslado aeroporto–hotel}
+  - modelo: miolo
+    campos:
+      titulo: Valores
+  - modelo: cta
+    campos:
+      titulo: Quer garantir a sua data?
+      texto: Fale com uma Xpert Xcaret da Facilita Pass.
