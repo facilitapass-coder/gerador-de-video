@@ -1,37 +1,31 @@
 # Como instalar o Facilita Studio
 
-Leva uns 10 minutos na primeira vez.
+## Jeito mais fácil
 
-## 1. Guarde a pasta do plugin num lugar fixo
+1. Abra o Claude Code (app do Claude, aba **Code**).
+2. Arraste o arquivo **facilita-studio-vX.zip** para a conversa e escreva: **instala esse plugin**.
+3. O Claude descompacta o arquivo e roda o instalador (`bash facilita-studio/instalar.sh`). Aprove quando ele pedir.
+4. Se no final aparecerem dois comandos começando com `/plugin`, cole cada um no chat e envie.
+5. Abra uma conversa nova e escreva: **quero começar o estúdio**.
 
-Descompacte o arquivo `.zip` e mova a pasta **facilita-studio** para a sua pasta pessoal, por exemplo:
+O plugin fica guardado em `~/facilita-studio`. Não apague essa pasta.
 
-- Mac: `/Users/<seu-usuário>/facilita-studio`
-- Linux: `/home/<seu-usuário>/facilita-studio`
+## Jeito manual
 
-**Não apague nem mova essa pasta depois**: o Claude usa o plugin direto dela.
-
-## 2. Instale no Claude Code
-
-Abra o Claude Code (app do Claude, aba **Code**, ou `claude` no terminal) e envie, trocando o caminho pelo da sua pasta:
-
-```
-/plugin marketplace add /Users/<seu-usuário>/facilita-studio
-/plugin install facilita-studio@facilita-studio
-```
-
-Se pedir, reinicie a conversa.
-
-## 3. Comece
-
-Escreva na conversa: **quero começar o estúdio**
-
-O Claude vai conferir o computador (Node, Python, ffmpeg e whisper), mostrar o que falta instalar, criar a pasta do seu estúdio e montar a sua marca com você.
+1. Descompacte o `.zip`.
+2. No terminal, rode `bash facilita-studio/instalar.sh`.
+3. Siga o que ele mostrar.
 
 ## Atualizar para uma versão nova
 
-1. Descompacte a versão nova por cima da pasta antiga (mesmo lugar, mesmo nome).
-2. No Claude Code: `/plugin marketplace update facilita-studio`
-3. No seu estúdio, peça: **atualize as ferramentas do estúdio**
+Faça igual: arraste o `.zip` novo e escreva **instala esse plugin**. O instalador substitui a versão anterior. Depois, no seu estúdio, peça **atualize as ferramentas do estúdio**.
 
 Suas marcas, projetos e vídeos ficam na pasta do estúdio e não são afetados.
+
+---
+
+### Passos do instalador (referência técnica)
+
+1. Descompactar o `.zip` numa pasta temporária.
+2. Rodar `bash <pasta>/facilita-studio/instalar.sh`. O script copia o plugin para `~/facilita-studio` e, se o comando `claude` existir, roda `claude plugin marketplace add ~/facilita-studio` e `claude plugin install facilita-studio@facilita-studio`.
+3. Se o comando `claude` não existir, o script imprime dois comandos `/plugin`, que o usuário precisa colar no chat (comandos com barra só funcionam digitados pelo usuário).
