@@ -19,7 +19,9 @@ Tudo roda no computador do cliente. A IA usa a assinatura ou a chave de API do *
 
 ## Instalação
 
-No Claude Code:
+**Pelo arquivo .zip (venda):** siga o [INSTALAR.md](INSTALAR.md): descompactar numa pasta fixa e rodar `/plugin marketplace add <pasta>` e `/plugin install facilita-studio@facilita-studio`. O pacote é gerado com `bash plugin/empacotar.sh`.
+
+**Pelo GitHub (repositório privado, só colaboradores):** no Claude Code:
 
 ```
 /plugin marketplace add facilitapass-coder/facilita-studio

@@ -1,6 +1,6 @@
 ---
 name: comecar
-description: Configura o Facilita Studio pela primeira vez. Confere o computador (Node, ffmpeg, whisper), cria a pasta do estúdio e monta o kit de marca conversando com o cliente. Use quando o cliente instalar o plugin, disser "começar", "configurar", "instalar o estúdio", ou quando não existir marca.json na pasta atual.
+description: Configura o Facilita Studio pela primeira vez. Confere o computador (Node, ffmpeg, whisper), cria a pasta do estúdio e monta o kit de marca conversando com o cliente. Use quando o cliente instalar o plugin, disser "começar", "configurar", "instalar o estúdio", quando não existir marca.json na pasta atual, ou quando pedir para "atualizar as ferramentas do estúdio" depois de instalar uma versão nova do plugin.
 ---
 
 # Começar o estúdio
