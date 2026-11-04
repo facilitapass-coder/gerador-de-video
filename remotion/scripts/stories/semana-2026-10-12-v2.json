@@ -1,0 +1,2259 @@
+{
+ "troca": {
+  "xcare": "Xcaret",
+  "xcarei": "Xcaret",
+  "x-cart": "Xcaret",
+  "xcaret": "Xcaret",
+  "xcar": "Xcaret",
+  "xcares": "Xcaret",
+  "xcaré": "Xcaret",
+  "xcarec": "Xcaret",
+  "xescara": "Xcaret",
+  "xcaria": "Xcaret",
+  "art": "Arte",
+  "mérico": "México",
+  "médico": "México",
+  "mérito": "México",
+  "magico": "México",
+  "cancún": "Cancún",
+  "playa": "Playa",
+  "la": "La",
+  "casa": "Casa",
+  "tubo": "tobo",
+  "tobó": "tobo",
+  "lhe": "aqui",
+  "sussego": "sossego",
+  "sufruindo": "usufruindo",
+  "feceria": "livre",
+  "\"chinema\"": "Xinema",
+  "corregador": "escorregador",
+  "teselagem": "tecelagem",
+  "guarda": "guardar",
+  "pulserinha": "pulseirinha",
+  "fã": "FAM",
+  "xiquilos": "Xiquillos",
+  "tequilos": "Xiquillos",
+  "xiquilo": "Xiquillos",
+  "avento": "Viento",
+  "aluna": "Luna",
+  "pachanguéria": "Paxanguería",
+  "pacietária": "faixa etária",
+  "faxetária": "faixa etária",
+  "pinbolinho": "pebolim",
+  "antivídeo": "antiguidade",
+  "focura": "fofura",
+  "bebesse": "bebês",
+  "retrenças": "relíquias",
+  "antiguas": "antigas",
+  "gárfos": "garfos",
+  "desacomponhado": "desacompanhado",
+  "agradado": "agradável",
+  "xiscaré": "Xcaret",
+  "resminando": "começando"
+ },
+ "frases": {
+  "tobo a água": "toboágua",
+  "tobo águas": "toboáguas",
+  "lacazela playa": "La Casa de la Playa",
+  "de itália": "etária",
+  "ultra luxo": "ultraluxo",
+  "cheio em realizado": "check-in realizado",
+  "tampa pulsei no braço": "tamo com a pulseira no braço",
+  "alfano inclusive": "All-Fun Inclusive",
+  "x caré art": "Xcaret Arte",
+  "x caré méxico": "Xcaret México",
+  "x caramé méxico": "Xcaret México",
+  "x carré médico": "Xcaret México",
+  "x cara e arte": "Xcaret Arte",
+  "x caramelo": "Xcaret México",
+  "distrito 1317": "Dixtrito 1317",
+  "de 1317 anos": "de 13 a 17 anos",
+  "usufra-o e desse": "usufruir desse",
+  "de fumado": "defumado",
+  "de ação gostoso em": "de recepção, gostoso hein",
+  "do do Xcaret": "do Xcaret",
+  "que a gente vê na": "Quem estiver na",
+  "x carré méxico": "Xcaret México",
+  "do do xcaret arte": "do Xcaret Arte",
+  "ou desfrutando aqui toda": "desfrutando de toda",
+  "tacos né de leite": "tacos",
+  "te tendendo": "te atendendo",
+  "queens boa": "queen",
+  "contendendo o": "dentro do"
+ },
+ "dias": [
+  {
+   "pasta": "2026-10-12_segunda",
+   "stories": [
+    {
+     "id": "d1-01",
+     "nome": "01_09h00_abertura",
+     "etiqueta": "Facilita Pass",
+     "titulo": "Essa semana eu te levo comigo pro México",
+     "falas": [
+      [
+       "a",
+       "reels/DJI_0619.MP4",
+       3,
+       9,
+       true
+      ],
+      [
+       "b",
+       "reels/DJI_0621.MP4",
+       4,
+       10,
+       true
+      ],
+      [
+       "c",
+       "reels/DJI_0587.MP4",
+       12,
+       17,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d1-02",
+     "nome": "02_17h45_pousei-em-cancun",
+     "etiqueta": "Cancún · aeroporto",
+     "titulo": "Pousei em Cancún",
+     "falas": [
+      [
+       "a",
+       1,
+       0,
+       28.8
+      ],
+      [
+       "b",
+       1,
+       40.25,
+       58.6
+      ]
+     ]
+    },
+    {
+     "id": "d1-03",
+     "nome": "03_18h20_esperando-o-onibus",
+     "etiqueta": "Cancún · aeroporto",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       4,
+       0,
+       16.3
+      ],
+      [
+       "b",
+       4,
+       26.2,
+       44.4
+      ]
+     ]
+    },
+    {
+     "id": "d1-04",
+     "nome": "04_18h26_atencao-na-saida",
+     "etiqueta": "Cancún · aeroporto",
+     "titulo": "Atenção na saída do aeroporto",
+     "falas": [
+      [
+       "a",
+       7,
+       0,
+       10.6
+      ],
+      [
+       "b",
+       7,
+       15.25,
+       25.2
+      ]
+     ],
+     "remove": [
+      "ou"
+     ]
+    },
+    {
+     "id": "d1-05",
+     "nome": "05_19h10_onibus-do-hotel",
+     "etiqueta": "Traslado dos Hotéis Xcaret",
+     "titulo": "O ônibus do hotel chegou",
+     "falas": [
+      [
+       "a",
+       9,
+       1,
+       9,
+       true
+      ],
+      [
+       "b",
+       10,
+       0.5,
+       6,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d1-06",
+     "nome": "06_20h25_chegada-ao-hotel",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Chegamos ao Hotel Xcaret Arte",
+     "falas": [
+      [
+       "a",
+       11,
+       0.5,
+       6.5,
+       true
+      ],
+      [
+       "b",
+       12,
+       11.5,
+       14.5,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d1-07",
+     "nome": "07_21h00_check-in-feito",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       21,
+       0,
+       19.6
+      ],
+      [
+       "b",
+       19,
+       14,
+       18.5,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d1-08",
+     "nome": "08_21h10_detalhes-do-quarto",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       20,
+       0.0,
+       24.2
+      ],
+      [
+       "b",
+       22,
+       0.0,
+       10.0,
+       true
+      ],
+      [
+       "c",
+       22,
+       62.0,
+       72.0,
+       true
+      ],
+      [
+       "d",
+       22,
+       84.0,
+       94.0,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d1-09",
+     "nome": "09_21h55_o-hotel-a-noite",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "O hotel à noite: tochas acesas, piscina iluminada",
+     "falas": [
+      [
+       "a",
+       28,
+       0.5,
+       5.5,
+       true
+      ],
+      [
+       "b",
+       29,
+       0,
+       4,
+       true
+      ],
+      [
+       "c",
+       32,
+       1,
+       9,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d1-10",
+     "nome": "10_22h00_mercado-do-hotel",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Uma volta pelo mercado do hotel",
+     "falas": [
+      [
+       "a",
+       30,
+       1,
+       8,
+       true
+      ],
+      [
+       "b",
+       31,
+       0,
+       4,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d1-12",
+     "nome": "11_22h45_bar",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Fechando a noite no bar. Amanhã tem mais.",
+     "falas": [
+      [
+       "a",
+       38,
+       1,
+       9,
+       true
+      ],
+      [
+       "b",
+       40,
+       3,
+       10,
+       true
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "pasta": "2026-10-13_terca",
+   "stories": [
+    {
+     "id": "d2-01",
+     "nome": "01_07h00_bom-dia-da-varanda",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Bom dia do Xcaret Arte",
+     "falas": [
+      [
+       "a",
+       43,
+       15,
+       22,
+       true
+      ],
+      [
+       "b",
+       50,
+       0.5,
+       4.5,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-02",
+     "nome": "02_08h10_caminho-do-cafe",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "O caminho até o café já é um passeio",
+     "falas": [
+      [
+       "a",
+       53,
+       2,
+       8,
+       true
+      ],
+      [
+       "b",
+       67,
+       1,
+       6,
+       true
+      ],
+      [
+       "c",
+       69,
+       1,
+       6,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-03",
+     "nome": "03_08h50_piscina-no-rooftop",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Piscina no rooftop. E uma parede inteira de cerâmica.",
+     "falas": [
+      [
+       "a",
+       73,
+       1,
+       7,
+       true
+      ],
+      [
+       "b",
+       74,
+       0.5,
+       6,
+       true
+      ],
+      [
+       "c",
+       84,
+       1,
+       7,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-05",
+     "nome": "04_09h55_proxima-parada",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Próxima parada: ultraluxo",
+     "falas": [
+      [
+       "a",
+       87,
+       0,
+       24.6
+      ]
+     ]
+    },
+    {
+     "id": "d2-06",
+     "nome": "05_09h57_por-que-o-fam",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       92,
+       0,
+       19.7
+      ]
+     ]
+    },
+    {
+     "id": "d2-07",
+     "nome": "06_10h20_chegada",
+     "etiqueta": "La Casa de la Playa",
+     "titulo": "La Casa de la Playa",
+     "falas": [
+      [
+       "a",
+       101,
+       0,
+       1.8,
+       true
+      ],
+      [
+       "b",
+       102,
+       10,
+       15,
+       true
+      ],
+      [
+       "c",
+       96,
+       1,
+       4,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-08",
+     "nome": "07_10h25_a-suite",
+     "etiqueta": "La Casa de la Playa",
+     "titulo": "A suíte",
+     "falas": [
+      [
+       "a",
+       109,
+       5,
+       12,
+       true
+      ],
+      [
+       "b",
+       114,
+       2,
+       7,
+       true
+      ],
+      [
+       "c",
+       112,
+       3,
+       8,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-09",
+     "nome": "08_10h30_aguas-vivas-no-quarto",
+     "etiqueta": "La Casa de la Playa",
+     "titulo": "Sim, são águas-vivas. No quarto.",
+     "falas": [
+      [
+       "a",
+       119,
+       1,
+       7,
+       true
+      ],
+      [
+       "b",
+       121,
+       3,
+       9,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-10",
+     "nome": "09_10h40_vista-da-varanda",
+     "etiqueta": "La Casa de la Playa",
+     "titulo": "A vista da varanda",
+     "falas": [
+      [
+       "a",
+       123,
+       3,
+       9,
+       true
+      ],
+      [
+       "b",
+       125,
+       1,
+       7,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-11",
+     "nome": "10_10h42_praia-reservada",
+     "etiqueta": "La Casa de la Playa",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       130,
+       0,
+       24.1
+      ]
+     ]
+    },
+    {
+     "id": "d2-12",
+     "nome": "11_10h45_exclusividade-e-sossego",
+     "etiqueta": "La Casa de la Playa",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       133,
+       20.95,
+       29.95
+      ]
+     ]
+    },
+    {
+     "id": "d2-13",
+     "nome": "12_10h50_biblioteca",
+     "etiqueta": "La Casa de la Playa",
+     "titulo": "Tem uma biblioteca",
+     "falas": [
+      [
+       "a",
+       137,
+       0.4,
+       4.4,
+       true
+      ],
+      [
+       "b",
+       136,
+       4,
+       10,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-14",
+     "nome": "13_10h55_chocolateria",
+     "etiqueta": "La Casa de la Playa",
+     "titulo": "E uma chocolateria",
+     "falas": [
+      [
+       "a",
+       139,
+       7,
+       17,
+       true
+      ],
+      [
+       "b",
+       145,
+       1,
+       6,
+       true
+      ],
+      [
+       "c",
+       142,
+       14,
+       19,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-15",
+     "nome": "14_11h08_piscina-infinita",
+     "etiqueta": "La Casa de la Playa",
+     "titulo": "A piscina infinita",
+     "falas": [
+      [
+       "a",
+       147,
+       13,
+       25,
+       true
+      ],
+      [
+       "b",
+       149,
+       2,
+       7,
+       true
+      ],
+      [
+       "c",
+       157,
+       3,
+       8,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-16",
+     "nome": "15_11h10_drink-de-boas-vindas",
+     "etiqueta": "La Casa de la Playa",
+     "titulo": "Um drink de boas-vindas",
+     "falas": [
+      [
+       "a",
+       151,
+       2,
+       8,
+       true
+      ],
+      [
+       "b",
+       158,
+       2,
+       7,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-17",
+     "nome": "16_11h25_a-praia",
+     "etiqueta": "La Casa de la Playa",
+     "titulo": "A praia",
+     "falas": [
+      [
+       "a",
+       174,
+       13,
+       23,
+       true
+      ],
+      [
+       "b",
+       176,
+       1,
+       7,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-18",
+     "nome": "17_11h45_rooftop-casa-dos-artistas",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "De volta ao Xcaret Arte",
+     "falas": [
+      [
+       "a",
+       186,
+       3.4,
+       23.5
+      ],
+      [
+       "b",
+       184,
+       3,
+       9,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-19",
+     "nome": "18_12h15_enseada",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Uma enseada dentro do hotel",
+     "falas": [
+      [
+       "a",
+       193,
+       1,
+       8,
+       true
+      ],
+      [
+       "b",
+       195,
+       0.5,
+       6,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-21",
+     "nome": "19_15h30_flamingos",
+     "etiqueta": "Parque Xcaret",
+     "titulo": "À tarde: parque Xcaret",
+     "falas": [
+      [
+       "a",
+       202,
+       1,
+       6,
+       true
+      ],
+      [
+       "b",
+       203,
+       0.5,
+       5.3,
+       true
+      ],
+      [
+       "c",
+       205,
+       0.3,
+       4.7,
+       true
+      ],
+      [
+       "d",
+       207,
+       2,
+       7,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-31",
+     "nome": "20_15h36_fish-therapy",
+     "etiqueta": "Parque Xcaret",
+     "titulo": "Fish therapy: pés na água e os peixinhos fazem o resto",
+     "falas": [
+      [
+       "a",
+       210,
+       1.0,
+       5.0,
+       true
+      ],
+      [
+       "b",
+       209,
+       2.5,
+       7.0,
+       true
+      ],
+      [
+       "c",
+       210,
+       7.0,
+       11.5,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-32",
+     "nome": "21_15h45_rio-subterraneo",
+     "etiqueta": "Parque Xcaret · imagens oficiais",
+     "titulo": "Depois, flutuamos por um rio subterrâneo",
+     "trilha": "aventura",
+     "falas": [
+      [
+       "a",
+       "../all-fun-inclusive/clips/All-Fun Inclusive_Xcaret8.mp4",
+       0.3,
+       5.3,
+       true
+      ],
+      [
+       "b",
+       "../all-fun-inclusive/clips/All-Fun Inclusive_Xcaret_I do this.mp4",
+       3.5,
+       8.0,
+       true
+      ],
+      [
+       "c",
+       "../all-fun-inclusive/clips/All-Fun Inclusive_Xcaret9.mp4",
+       0.2,
+       4.2,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-23",
+     "nome": "22_17h00_golfinhos-e-arraias",
+     "etiqueta": "Parque Xcaret",
+     "titulo": "Aqui acontece a experiência com golfinhos e arraias",
+     "falas": [
+      [
+       "a",
+       219,
+       3.0,
+       9.0,
+       true
+      ],
+      [
+       "b",
+       226,
+       1.0,
+       7.0,
+       true
+      ],
+      [
+       "c",
+       225,
+       14.0,
+       21.0,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-24",
+     "nome": "23_17h40_vista-de-cima",
+     "etiqueta": "La Casa de la Playa",
+     "titulo": "A praia vista de cima",
+     "falas": [
+      [
+       "a",
+       "reels/DJI_0576.MP4",
+       3,
+       9,
+       true
+      ],
+      [
+       "b",
+       "reels/DJI_0593.MP4",
+       13,
+       19,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-25",
+     "nome": "24_18h50_parque-noturno",
+     "etiqueta": "Xplor Fuego",
+     "titulo": "Agora: um parque que só abre à noite",
+     "falas": [
+      [
+       "a",
+       232,
+       0,
+       9.6
+      ],
+      [
+       "b",
+       232,
+       31.8,
+       39.5
+      ]
+     ]
+    },
+    {
+     "id": "d2-26",
+     "nome": "25_19h05_dentro-da-caverna",
+     "etiqueta": "Xplor Fuego",
+     "titulo": "Dentro da caverna",
+     "falas": [
+      [
+       "a",
+       236,
+       12,
+       19,
+       true
+      ],
+      [
+       "b",
+       237,
+       5,
+       12,
+       true
+      ],
+      [
+       "c",
+       239,
+       5,
+       11,
+       true
+      ],
+      [
+       "d",
+       240,
+       3,
+       8,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d2-28",
+     "nome": "26_22h55_jantar-no-quarto",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "O jantar chegou no quarto",
+     "falas": [
+      [
+       "a",
+       249,
+       1,
+       8.4,
+       true
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "pasta": "2026-10-14_quarta",
+   "stories": [
+    {
+     "id": "d3-01",
+     "nome": "01_06h20_nascer-do-sol",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "6h20. O sol nascendo no Caribe.",
+     "falas": [
+      [
+       "a",
+       250,
+       0,
+       2.2,
+       true
+      ],
+      [
+       "b",
+       251,
+       5,
+       12,
+       true
+      ],
+      [
+       "c",
+       252,
+       5,
+       13,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-02",
+     "nome": "02_08h20_cafe-pela-tv",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Pedi o café da manhã pela TV",
+     "falas": [
+      [
+       "a",
+       267,
+       6.1,
+       20.6
+      ],
+      [
+       "b",
+       267,
+       31.0,
+       33.9
+      ],
+      [
+       "c",
+       267,
+       44.4,
+       55.3
+      ],
+      [
+       "d",
+       271,
+       1.0,
+       5.5,
+       true
+      ],
+      [
+       "e",
+       274,
+       0.0,
+       15.3
+      ]
+     ],
+     "troca": {
+      "mãe": "manhã",
+      "hot": "hot"
+     }
+    },
+    {
+     "id": "d3-03",
+     "nome": "03_08h45_o-cafe-chegou",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Meia hora depois, o café chegou. Depois, rede.",
+     "falas": [
+      [
+       "a",
+       276,
+       40,
+       50,
+       true
+      ],
+      [
+       "b",
+       276,
+       98,
+       104,
+       true
+      ],
+      [
+       "c",
+       278,
+       0,
+       2.7,
+       true
+      ],
+      [
+       "d",
+       279,
+       0,
+       2.9,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-05",
+     "nome": "04_10h10_ultimo-dia-no-arte",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       292,
+       10.05,
+       24.7
+      ]
+     ]
+    },
+    {
+     "id": "d3-06",
+     "nome": "05_10h15_arte-por-todo-lado",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Arte por todo lado",
+     "falas": [
+      [
+       "a",
+       293,
+       0.5,
+       5,
+       true
+      ],
+      [
+       "b",
+       294,
+       0.5,
+       5.3,
+       true
+      ],
+      [
+       "c",
+       300,
+       1,
+       7.5,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-07",
+     "nome": "06_10h30_enseadas",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "As enseadas do hotel",
+     "falas": [
+      [
+       "a",
+       302,
+       2,
+       8.5,
+       true
+      ],
+      [
+       "b",
+       305,
+       2,
+       8.5,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-08",
+     "nome": "07_10h35_tunel",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Um túnel que termina na água",
+     "falas": [
+      [
+       "a",
+       329,
+       10,
+       15,
+       true
+      ],
+      [
+       "b",
+       328,
+       5,
+       12,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-09",
+     "nome": "08_11h00_ultimo-mergulho",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Último mergulho no Arte",
+     "falas": [
+      [
+       "a",
+       337,
+       1,
+       7.5,
+       true
+      ],
+      [
+       "b",
+       334,
+       1,
+       7.5,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-10",
+     "nome": "09_12h25_check-out",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Check-out feito. E agora?",
+     "falas": [
+      [
+       "a",
+       344,
+       0.0,
+       23.9
+      ]
+     ],
+     "troca": {
+      "check-in": "check-out"
+     }
+    },
+    {
+     "id": "d3-11",
+     "nome": "10_12h35_almoco",
+     "etiqueta": "Hotel Xcaret Arte",
+     "titulo": "Almoço antes de trocar de hotel",
+     "falas": [
+      [
+       "a",
+       345,
+       0,
+       2.7,
+       true
+      ],
+      [
+       "b",
+       347,
+       2,
+       9,
+       true
+      ],
+      [
+       "c",
+       348,
+       1,
+       7,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-13",
+     "nome": "11_14h05_chegamos",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Partiu Hotel Xcaret México. Chegamos.",
+     "falas": [
+      [
+       "a",
+       349,
+       2,
+       5,
+       true
+      ],
+      [
+       "b",
+       351,
+       0.5,
+       5.5,
+       true
+      ],
+      [
+       "c",
+       353,
+       2,
+       9,
+       true
+      ],
+      [
+       "d",
+       354,
+       5,
+       12,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-14",
+     "nome": "12_14h15_rio-por-dentro",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Tem um rio passando por dentro do hotel",
+     "falas": [
+      [
+       "a",
+       357,
+       1,
+       7.5,
+       true
+      ],
+      [
+       "b",
+       360,
+       0.5,
+       5.5,
+       true
+      ],
+      [
+       "c",
+       362,
+       0,
+       3.7,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-15",
+     "nome": "13_14h46_rooftop-casa-fuego",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       374,
+       5.6,
+       21.8
+      ],
+      [
+       "b",
+       374,
+       49.3,
+       56.5
+      ],
+      [
+       "c",
+       369,
+       1,
+       7,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-16",
+     "nome": "14_15h13_piscina-dos-pequenos",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Piscina com escorregador para os pequenos",
+     "falas": [
+      [
+       "a",
+       402,
+       1,
+       11,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-17",
+     "nome": "15_15h27_xinema",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Um cinema com piscina de bolinhas",
+     "falas": [
+      [
+       "a",
+       409,
+       1,
+       8,
+       true
+      ],
+      [
+       "b",
+       408,
+       8,
+       16,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-18",
+     "nome": "16_15h30_carrinhos-de-comida",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Carrinhos de comida, como numa feira",
+     "falas": [
+      [
+       "a",
+       410,
+       2,
+       10,
+       true
+      ],
+      [
+       "b",
+       411,
+       5,
+       12,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-19",
+     "nome": "17_15h35_toboaguas",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Toboáguas saindo do terraço",
+     "falas": [
+      [
+       "a",
+       413,
+       3,
+       10,
+       true
+      ],
+      [
+       "b",
+       416,
+       0.5,
+       6.5,
+       true
+      ],
+      [
+       "c",
+       417,
+       5,
+       12,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-20",
+     "nome": "18_15h44_bar-das-reliquias",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       421,
+       0,
+       21.0
+      ],
+      [
+       "b",
+       419,
+       0.5,
+       6.5,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-21",
+     "nome": "19_15h49_sala-de-jogos",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       425,
+       0,
+       13.0
+      ],
+      [
+       "b",
+       427,
+       0.5,
+       6,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-22",
+     "nome": "20_16h10_queria-ser-crianca",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       431,
+       0,
+       12.5
+      ],
+      [
+       "b",
+       433,
+       5,
+       12,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-23",
+     "nome": "21_16h34_casinhas",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       442,
+       0,
+       15.0
+      ],
+      [
+       "b",
+       444,
+       0.5,
+       6,
+       true
+      ],
+      [
+       "c",
+       446,
+       0.5,
+       6,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-24",
+     "nome": "22_16h37_atalho-para-a-lavanderia",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Um tobogã que serve de atalho para a lavanderia",
+     "falas": [
+      [
+       "a",
+       451,
+       0.5,
+       5.3,
+       true
+      ],
+      [
+       "b",
+       452,
+       0.5,
+       5.3,
+       true
+      ],
+      [
+       "c",
+       453,
+       0.5,
+       6,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-25",
+     "nome": "23_16h48_adulto-nao-entra",
+     "etiqueta": "Dixtrito 1317 · 13 a 17 anos",
+     "titulo": "Aqui adulto não entra",
+     "falas": [
+      [
+       "a",
+       458,
+       0,
+       17.3
+      ],
+      [
+       "b",
+       459,
+       3,
+       9,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-26",
+     "nome": "24_16h50_maquina-de-soco",
+     "etiqueta": "Dixtrito 1317 · 13 a 17 anos",
+     "titulo": "Testei a máquina de soco",
+     "falas": [
+      [
+       "a",
+       461,
+       2,
+       11,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d3-27",
+     "nome": "25_18h21_meu-quarto",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Meu quarto no Xcaret México",
+     "falas": [
+      [
+       "a",
+       466,
+       4.6,
+       42.0
+      ]
+     ]
+    },
+    {
+     "id": "d3-28",
+     "nome": "26_18h22_o-banheiro",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       467,
+       0,
+       31.9
+      ]
+     ]
+    },
+    {
+     "id": "d3-29",
+     "nome": "27_21h23_jantar-na-chapa",
+     "etiqueta": "Tama-món",
+     "titulo": "Você monta o prato e eles preparam na chapa",
+     "falas": [
+      [
+       "a",
+       473,
+       1,
+       8,
+       true
+      ],
+      [
+       "b",
+       476,
+       0,
+       3.5,
+       true
+      ],
+      [
+       "c",
+       480,
+       2,
+       9,
+       true
+      ],
+      [
+       "d",
+       481,
+       0.5,
+       5.3,
+       true
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "pasta": "2026-10-15_quinta",
+   "stories": [
+    {
+     "id": "d4-01",
+     "nome": "01_09h50_suite-com-piscina",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       499,
+       1.0,
+       5.0,
+       true
+      ],
+      [
+       "b",
+       500,
+       0.0,
+       12.9
+      ],
+      [
+       "c",
+       501,
+       3.0,
+       9.0,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d4-02",
+     "nome": "02_10h15_cafe-no-mercado",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       509,
+       3.2,
+       6.2,
+       true
+      ],
+      [
+       "b",
+       510,
+       12.1,
+       28.0
+      ],
+      [
+       "c",
+       512,
+       0.0,
+       17.9
+      ],
+      [
+       "d",
+       511,
+       21.8,
+       32.6
+      ]
+     ]
+    },
+    {
+     "id": "d4-05",
+     "nome": "03_11h40_visto-do-alto",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Depois do café: piscina e o hotel visto do alto",
+     "falas": [
+      [
+       "a",
+       513,
+       1,
+       7,
+       true
+      ],
+      [
+       "b",
+       516,
+       0.5,
+       7,
+       true
+      ],
+      [
+       "c",
+       517,
+       0,
+       5,
+       true
+      ]
+     ],
+     "faixa": [
+      "latin-party-pop",
+      8
+     ]
+    },
+    {
+     "id": "d4-08",
+     "nome": "04_12h13_a-praia-do-hotel",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       525,
+       1.0,
+       6.0,
+       true
+      ],
+      [
+       "b",
+       528,
+       0.0,
+       31.0
+      ],
+      [
+       "c",
+       530,
+       3.0,
+       9.0,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d4-11",
+     "nome": "05_15h39_apresentacao-de-danca",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Do nada, uma apresentação de dança",
+     "falas": [
+      [
+       "a",
+       537,
+       5,
+       15,
+       true
+      ],
+      [
+       "b",
+       538,
+       1,
+       7,
+       true
+      ]
+     ],
+     "faixa": [
+      "fiesta-guadalajara",
+      20
+     ]
+    },
+    {
+     "id": "d4-12",
+     "nome": "06_17h40_fim-de-tarde",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Fim de tarde no Xcaret México, visto de cima",
+     "falas": [
+      [
+       "a",
+       "reels/DJI_0636.MP4",
+       3,
+       10,
+       true
+      ],
+      [
+       "b",
+       "reels/DJI_0646.MP4",
+       5,
+       13,
+       true
+      ],
+      [
+       "c",
+       "reels/DJI_0659.MP4",
+       3,
+       10,
+       true
+      ],
+      [
+       "d",
+       541,
+       0.5,
+       6,
+       true
+      ]
+     ],
+     "faixa": [
+      "tampico-cumbia",
+      20
+     ]
+    },
+    {
+     "id": "d4-14",
+     "nome": "07_21h30_tem-novidade",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Daqui a pouco eu conto por que vim até aqui",
+     "falas": [
+      [
+       "a",
+       547,
+       0.5,
+       7.5,
+       true
+      ]
+     ],
+     "faixa": [
+      "huapango-banda",
+      15
+     ]
+    }
+   ]
+  },
+  {
+   "pasta": "2026-10-16_sexta",
+   "stories": [
+    {
+     "id": "d5-01",
+     "nome": "01_07h30_bom-dia-papais-e-mamaes",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "Hoje: o hotel para quem viaja com criança",
+     "falas": [
+      [
+       "a",
+       585,
+       0,
+       33.5
+      ]
+     ]
+    },
+    {
+     "id": "d5-02",
+     "nome": "02_07h31_a-diferenca-para-o-arte",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       586,
+       0,
+       13.4
+      ],
+      [
+       "b",
+       586,
+       14.0,
+       16.85
+      ],
+      [
+       "c",
+       586,
+       22.05,
+       27.55
+      ],
+      [
+       "d",
+       586,
+       30.1,
+       34.2
+      ]
+     ]
+    },
+    {
+     "id": "d5-03",
+     "nome": "03_07h33_cada-casa-tem-sua-piscina",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       587,
+       2.5,
+       12.6
+      ],
+      [
+       "b",
+       587,
+       13.8,
+       21.6
+      ],
+      [
+       "c",
+       587,
+       24.1,
+       29.3
+      ]
+     ]
+    },
+    {
+     "id": "d5-04",
+     "nome": "04_07h37_piscina-da-casa-viento",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       590,
+       7.3,
+       27.0
+      ]
+     ]
+    },
+    {
+     "id": "d5-05",
+     "nome": "05_07h40_xiquillos",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       593,
+       0,
+       16.6
+      ]
+     ]
+    },
+    {
+     "id": "d5-06",
+     "nome": "06_07h42_game-room",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       595,
+       0,
+       19.8
+      ]
+     ]
+    },
+    {
+     "id": "d5-07",
+     "nome": "07_07h44_de-barco-pro-parque",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       596,
+       0,
+       9.7
+      ],
+      [
+       "b",
+       596,
+       10,
+       21.9
+      ],
+      [
+       "c",
+       596,
+       30.9,
+       36.9
+      ]
+     ]
+    },
+    {
+     "id": "d5-08",
+     "nome": "08_07h46_quadras",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       597,
+       28.7,
+       45.0
+      ]
+     ]
+    },
+    {
+     "id": "d5-09",
+     "nome": "09_07h52_xinema",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       599,
+       0,
+       4.6
+      ],
+      [
+       "b",
+       599,
+       7.15,
+       11.95
+      ],
+      [
+       "c",
+       599,
+       14.95,
+       26
+      ]
+     ]
+    },
+    {
+     "id": "d5-10",
+     "nome": "10_07h55_toboaguas",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       601,
+       0,
+       24
+      ]
+     ]
+    },
+    {
+     "id": "d5-11",
+     "nome": "11_08h02_casa-luna",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       605,
+       30.0,
+       56.4
+      ]
+     ]
+    },
+    {
+     "id": "d5-12",
+     "nome": "12_08h05_piscina-da-casa-luna",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       606,
+       0,
+       38.0
+      ]
+     ]
+    },
+    {
+     "id": "d5-13",
+     "nome": "13_08h06_bar-em-toda-piscina",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       607,
+       0,
+       36.2
+      ]
+     ]
+    },
+    {
+     "id": "d5-14",
+     "nome": "14_08h08_dixtrito-1317",
+     "etiqueta": "Dixtrito 1317 · 13 a 17 anos",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       608,
+       5.5,
+       40.5
+      ],
+      [
+       "b",
+       459,
+       3,
+       9,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d5-15",
+     "nome": "15_08h17_paxangueria",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       611,
+       0,
+       26.9
+      ]
+     ]
+    },
+    {
+     "id": "d5-16",
+     "nome": "16_08h19_rooftop-da-casa-del-sol",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       613,
+       0,
+       17.6
+      ],
+      [
+       "b",
+       614,
+       5,
+       11,
+       true
+      ]
+     ]
+    },
+    {
+     "id": "d5-17",
+     "nome": "17_08h26_piscina-subterranea",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       620,
+       0,
+       7.0
+      ],
+      [
+       "b",
+       620,
+       13.9,
+       27.0
+      ],
+      [
+       "c",
+       621,
+       0,
+       12.0
+      ]
+     ]
+    },
+    {
+     "id": "d5-18",
+     "nome": "18_08h30_toboagua-escondido",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       626,
+       5.95,
+       20.8
+      ],
+      [
+       "b",
+       626,
+       28,
+       46.2
+      ],
+      [
+       "c",
+       626,
+       51.2,
+       55.2
+      ]
+     ]
+    },
+    {
+     "id": "d5-19",
+     "nome": "19_08h32_voce-vai-se-surpreender",
+     "etiqueta": "Hotel Xcaret México",
+     "titulo": "",
+     "falas": [
+      [
+       "a",
+       626,
+       72.3,
+       96.2
+      ]
+     ]
+    },
+    {
+     "id": "d5-21",
+     "nome": "20_14h10_ate-a-proxima",
+     "etiqueta": "Facilita Pass",
+     "titulo": "Hora de voltar. Até a próxima, México.",
+     "falas": [
+      [
+       "a",
+       627,
+       0.3,
+       4.5,
+       true
+      ],
+      [
+       "b",
+       628,
+       1,
+       6,
+       true
+      ],
+      [
+       "c",
+       629,
+       5,
+       20,
+       true
+      ]
+     ],
+     "faixa": [
+      "fiesta-guadalajara",
+      75
+     ]
+    }
+   ]
+  }
+ ]
+}

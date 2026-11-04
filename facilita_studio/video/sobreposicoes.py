@@ -79,7 +79,7 @@ def titulo_png(texto: str, destino: Path, marca: Marca, posicao: str = "topo") -
 
 
 def cta_png(cta: str, destino: Path, marca: Marca, logo: Path | None, subtitulo: str = "") -> Path:
-    """Cartão final: logo em cartão branco e botão laranja com o CTA, centrados na zona segura."""
+    """Cartão final: logo em cartão marinho e botão laranja com o CTA, centrados na zona segura."""
     W, H = marca.video["largura"], marca.video["altura"]
     x0, y0, x1, y1 = zona_segura(marca)
     largura_util = x1 - x0
@@ -112,7 +112,7 @@ def cta_png(cta: str, destino: Path, marca: Marca, logo: Path | None, subtitulo:
 
     if logo_img is not None:
         card_w, card_h = logo_img.width + 120, logo_img.height + 100
-        d.rounded_rectangle((cx - card_w // 2, y, cx + card_w // 2, y + card_h), radius=36, fill=(255, 255, 255, 245))
+        d.rounded_rectangle((cx - card_w // 2, y, cx + card_w // 2, y + card_h), radius=36, fill=_rgba(marca, "marinho", 245))
         img.alpha_composite(logo_img, (cx - logo_img.width // 2, y + 50))
         y += card_h + 50
 

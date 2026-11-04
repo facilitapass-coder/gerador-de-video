@@ -1,0 +1,80 @@
+{
+ "falas": [
+  [
+   "a",
+   457,
+   0.0,
+   8.15
+  ],
+  [
+   "b",
+   456,
+   3.2,
+   8.2,
+   true
+  ],
+  [
+   "c",
+   458,
+   0.0,
+   7.6
+  ],
+  [
+   "d",
+   459,
+   0.5,
+   5.5,
+   true
+  ],
+  [
+   "e",
+   539,
+   29.0,
+   35.5,
+   true
+  ],
+  [
+   "f",
+   611,
+   12.3,
+   22.4
+  ],
+  [
+   "g",
+   464,
+   0.3,
+   4.3,
+   true
+  ],
+  [
+   "h",
+   608,
+   60.6,
+   66.8
+  ]
+ ],
+ "reel": {
+  "gancho": "Aqui adulto não entra",
+  "etiqueta": "Dixtrito 1317 · 13 a 17 anos",
+  "final1": "Dixtrito 1317 · Hotel Xcaret México",
+  "final2": "Seu filho ia querer voltar pra casa?",
+  "final3": "Manda pra quem tem adolescente"
+ },
+ "id": "r19",
+ "troca": {
+  "xcaret": "Xcaret",
+  "tubo": "tobo",
+  "tobó": "tobo",
+  "feceria": "livre",
+  "pacietária": "faixa etária",
+  "pachanguéria": "Paxanguería",
+  "la": "La",
+  "sufruindo": "usufruindo"
+ },
+ "frases": {
+  "tobo a água": "toboágua",
+  "tobo águas": "toboáguas",
+  "não quando diz": "não condiz"
+ },
+ "remove": []
+}

@@ -1,0 +1,66 @@
+{
+ "falas": [
+  [
+   "a",
+   620,
+   0.0,
+   6.7
+  ],
+  [
+   "b",
+   620,
+   13.9,
+   24.0
+  ],
+  [
+   "c",
+   621,
+   0.0,
+   12.3
+  ],
+  [
+   "d",
+   621,
+   23.2,
+   40.8
+  ],
+  [
+   "e",
+   623,
+   0.0,
+   2.8,
+   true
+  ],
+  [
+   "f",
+   625,
+   0.0,
+   2.9,
+   true
+  ]
+ ],
+ "reel": {
+  "gancho": "Achei uma piscina debaixo do hotel",
+  "etiqueta": "Hotel Xcaret México",
+  "final1": "Hotel Xcaret México",
+  "final2": "Você entraria?",
+  "final3": "Manda pra quem ia amar esse lugar"
+ },
+ "id": "r28",
+ "troca": {
+  "xcaret": "Xcaret",
+  "tubo": "tobo",
+  "tobó": "tobo",
+  "feceria": "livre",
+  "pacietária": "faixa etária",
+  "pachanguéria": "Paxanguería",
+  "la": "La",
+  "sufruindo": "usufruindo"
+ },
+ "frases": {
+  "tobo a água": "toboágua",
+  "tobo águas": "toboáguas",
+  "não quando diz": "não condiz"
+ },
+ "remove": []
+}

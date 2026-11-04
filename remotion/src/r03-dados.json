@@ -1,0 +1,489 @@
+{
+ "total": 1006,
+ "linha": [
+  {
+   "nome": "a",
+   "quadros": 92,
+   "inicio": 0
+  },
+  {
+   "nome": "b",
+   "quadros": 243,
+   "inicio": 92
+  },
+  {
+   "nome": "c",
+   "quadros": 236,
+   "inicio": 335
+  },
+  {
+   "nome": "d",
+   "quadros": 182,
+   "inicio": 571
+  },
+  {
+   "nome": "e",
+   "quadros": 190,
+   "inicio": 753
+  },
+  {
+   "nome": "f",
+   "quadros": 63,
+   "inicio": 943
+  }
+ ],
+ "grupos": [
+  [
+   {
+    "quadro": 2,
+    "texto": "agora"
+   },
+   {
+    "quadro": 14,
+    "texto": "oficialmente"
+   }
+  ],
+  [
+   {
+    "quadro": 44,
+    "texto": "Xpert"
+   },
+   {
+    "quadro": 61,
+    "texto": "Xcaret"
+   }
+  ],
+  [
+   {
+    "quadro": 93,
+    "texto": "esse"
+   },
+   {
+    "quadro": 99,
+    "texto": "diploma"
+   },
+   {
+    "quadro": 110,
+    "texto": "aqui"
+   }
+  ],
+  [
+   {
+    "quadro": 127,
+    "texto": "representa"
+   },
+   {
+    "quadro": 156,
+    "texto": "a"
+   }
+  ],
+  [
+   {
+    "quadro": 159,
+    "texto": "confiança"
+   },
+   {
+    "quadro": 177,
+    "texto": "de"
+   },
+   {
+    "quadro": 180,
+    "texto": "vocês"
+   }
+  ],
+  [
+   {
+    "quadro": 189,
+    "texto": "em"
+   },
+   {
+    "quadro": 192,
+    "texto": "nosso"
+   },
+   {
+    "quadro": 201,
+    "texto": "trabalho"
+   }
+  ],
+  [
+   {
+    "quadro": 217,
+    "texto": "porque"
+   },
+   {
+    "quadro": 228,
+    "texto": "a"
+   },
+   {
+    "quadro": 229,
+    "texto": "gente"
+   }
+  ],
+  [
+   {
+    "quadro": 238,
+    "texto": "trabalha"
+   },
+   {
+    "quadro": 251,
+    "texto": "todos"
+   },
+   {
+    "quadro": 259,
+    "texto": "os"
+   }
+  ],
+  [
+   {
+    "quadro": 263,
+    "texto": "dias"
+   },
+   {
+    "quadro": 269,
+    "texto": "para"
+   },
+   {
+    "quadro": 276,
+    "texto": "que"
+   }
+  ],
+  [
+   {
+    "quadro": 281,
+    "texto": "a"
+   },
+   {
+    "quadro": 282,
+    "texto": "gente"
+   },
+   {
+    "quadro": 291,
+    "texto": "possa"
+   }
+  ],
+  [
+   {
+    "quadro": 302,
+    "texto": "entregar"
+   },
+   {
+    "quadro": 320,
+    "texto": "o"
+   },
+   {
+    "quadro": 322,
+    "texto": "melhor"
+   }
+  ],
+  [
+   {
+    "quadro": 336,
+    "texto": "a"
+   },
+   {
+    "quadro": 338,
+    "texto": "gente"
+   },
+   {
+    "quadro": 349,
+    "texto": "foi"
+   }
+  ],
+  [
+   {
+    "quadro": 355,
+    "texto": "convidado"
+   },
+   {
+    "quadro": 375,
+    "texto": "pelo"
+   }
+  ],
+  [
+   {
+    "quadro": 384,
+    "texto": "Xcaret"
+   },
+   {
+    "quadro": 397,
+    "texto": "para"
+   },
+   {
+    "quadro": 405,
+    "texto": "fazer"
+   }
+  ],
+  [
+   {
+    "quadro": 416,
+    "texto": "parte"
+   },
+   {
+    "quadro": 427,
+    "texto": "desse"
+   },
+   {
+    "quadro": 438,
+    "texto": "projeto"
+   }
+  ],
+  [
+   {
+    "quadro": 458,
+    "texto": "entre"
+   },
+   {
+    "quadro": 471,
+    "texto": "várias"
+   }
+  ],
+  [
+   {
+    "quadro": 486,
+    "texto": "agências"
+   },
+   {
+    "quadro": 507,
+    "texto": "que"
+   },
+   {
+    "quadro": 515,
+    "texto": "tem"
+   }
+  ],
+  [
+   {
+    "quadro": 523,
+    "texto": "no"
+   },
+   {
+    "quadro": 528,
+    "texto": "mercado"
+   }
+  ],
+  [
+   {
+    "quadro": 546,
+    "texto": "brasileiro"
+   }
+  ],
+  [
+   {
+    "quadro": 572,
+    "texto": "para"
+   },
+   {
+    "quadro": 582,
+    "texto": "a"
+   },
+   {
+    "quadro": 585,
+    "texto": "gente"
+   }
+  ],
+  [
+   {
+    "quadro": 598,
+    "texto": "é"
+   },
+   {
+    "quadro": 600,
+    "texto": "uma"
+   },
+   {
+    "quadro": 608,
+    "texto": "honra"
+   }
+  ],
+  [
+   {
+    "quadro": 621,
+    "texto": "ser"
+   },
+   {
+    "quadro": 632,
+    "texto": "pioneira"
+   },
+   {
+    "quadro": 651,
+    "texto": "nesse"
+   }
+  ],
+  [
+   {
+    "quadro": 663,
+    "texto": "projeto"
+   },
+   {
+    "quadro": 681,
+    "texto": "e"
+   },
+   {
+    "quadro": 683,
+    "texto": "agora"
+   }
+  ],
+  [
+   {
+    "quadro": 695,
+    "texto": "com"
+   },
+   {
+    "quadro": 703,
+    "texto": "a"
+   },
+   {
+    "quadro": 705,
+    "texto": "formação"
+   }
+  ],
+  [
+   {
+    "quadro": 725,
+    "texto": "completa"
+   }
+  ],
+  [
+   {
+    "quadro": 754,
+    "texto": "esse"
+   },
+   {
+    "quadro": 757,
+    "texto": "aqui"
+   },
+   {
+    "quadro": 763,
+    "texto": "não"
+   }
+  ],
+  [
+   {
+    "quadro": 766,
+    "texto": "é"
+   },
+   {
+    "quadro": 787,
+    "texto": "somente"
+   },
+   {
+    "quadro": 799,
+    "texto": "da"
+   }
+  ],
+  [
+   {
+    "quadro": 802,
+    "texto": "Facilita"
+   },
+   {
+    "quadro": 816,
+    "texto": "Pass"
+   }
+  ],
+  [
+   {
+    "quadro": 826,
+    "texto": "esse"
+   },
+   {
+    "quadro": 833,
+    "texto": "aqui"
+   },
+   {
+    "quadro": 840,
+    "texto": "é"
+   }
+  ],
+  [
+   {
+    "quadro": 841,
+    "texto": "para"
+   },
+   {
+    "quadro": 848,
+    "texto": "vocês"
+   }
+  ],
+  [
+   {
+    "quadro": 860,
+    "texto": "é"
+   },
+   {
+    "quadro": 862,
+    "texto": "para"
+   },
+   {
+    "quadro": 868,
+    "texto": "poder"
+   }
+  ],
+  [
+   {
+    "quadro": 877,
+    "texto": "entregar"
+   },
+   {
+    "quadro": 891,
+    "texto": "o"
+   },
+   {
+    "quadro": 893,
+    "texto": "melhor"
+   }
+  ],
+  [
+   {
+    "quadro": 906,
+    "texto": "para"
+   },
+   {
+    "quadro": 915,
+    "texto": "vocês"
+   }
+  ],
+  [
+   {
+    "quadro": 944,
+    "texto": "Obrigado"
+   },
+   {
+    "quadro": 955,
+    "texto": "por"
+   },
+   {
+    "quadro": 959,
+    "texto": "confiar"
+   }
+  ],
+  [
+   {
+    "quadro": 969,
+    "texto": "na"
+   },
+   {
+    "quadro": 972,
+    "texto": "gente"
+   },
+   {
+    "quadro": 979,
+    "texto": "e"
+   }
+  ],
+  [
+   {
+    "quadro": 981,
+    "texto": "no"
+   },
+   {
+    "quadro": 983,
+    "texto": "nosso"
+   },
+   {
+    "quadro": 993,
+    "texto": "trabalho"
+   }
+  ]
+ ]
+}

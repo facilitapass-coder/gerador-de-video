@@ -8,7 +8,7 @@ from PIL import Image
 
 from facilita_studio.imagens.gerador import gerar, validar
 from facilita_studio.imagens.render import navegador
-from facilita_studio.marca import erros
+from facilita_studio.marca import FONTES_SUBSTITUTAS, erros
 from facilita_studio.util import ErroFacilita
 
 HOJE = dt.date(2026, 10, 9)
@@ -99,8 +99,9 @@ def test_poppins_carregada_quando_instalada(tmp_path, marca):
     """Com arquivos de fonte na pasta da marca, o Chromium carrega a família 'Poppins'."""
     fontes = marca.pasta / "fontes"
     fontes.mkdir()
+    origem = next(f for f in FONTES_SUBSTITUTAS["negrito"] if Path(f).exists())
     for peso, arq in marca.dados["fonte"]["arquivos"].items():
-        shutil.copy("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", marca.pasta / arq)
+        shutil.copy(origem, marca.pasta / arq)
     r = gerar(_peca(tmp_path, modelo="oferta"), marca, tmp_path / "saida", hoje=HOJE)
     assert r["saidas"][0]["poppins_carregada"]
 

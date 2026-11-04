@@ -6,7 +6,7 @@ Estão prontos os requisitos P0, os P1 que rodam localmente e os P2 de comparaç
 
 ## Instalação no seu computador
 
-Pré-requisitos: Python 3.10+ e ffmpeg (Mac: `brew install python@3.12 ffmpeg`; Windows: `winget install Python.Python.3.12 Gyan.FFmpeg`).
+Pré-requisitos: Python 3.10+ e ffmpeg (Mac: `brew install python@3.12 ffmpeg-full && brew link --force ffmpeg-full`; o `ffmpeg` simples do Homebrew não traz o filtro de legendas; Windows: `winget install Python.Python.3.12 Gyan.FFmpeg`).
 
 ```bash
 git clone https://github.com/facilitapass-coder/gerador-de-video.git

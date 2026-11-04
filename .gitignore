@@ -8,3 +8,10 @@ trabalho/
 exemplos/amostras/
 marca/derivados/
 projetos/
+.DS_Store
+# Remotion: mídia bruta fica fora do git (só fontes e marca entram)
+remotion/node_modules/
+remotion/out/
+remotion/public/*
+!remotion/public/fontes/
+!remotion/public/marca/

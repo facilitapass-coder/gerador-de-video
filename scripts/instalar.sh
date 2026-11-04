@@ -25,14 +25,19 @@ echo "Python: $($PY --version)"
 # 2. ffmpeg
 if ! command -v ffmpeg >/dev/null 2>&1 || ! command -v ffprobe >/dev/null 2>&1; then
   if [ "$(uname)" = "Darwin" ] && command -v brew >/dev/null 2>&1; then
-    read -r -p "ffmpeg não encontrado. Instalar agora com Homebrew (brew install ffmpeg)? [s/N] " r
-    if [[ "$r" =~ ^[sS]$ ]]; then brew install ffmpeg; else echo "Instale o ffmpeg e rode de novo."; exit 1; fi
+    read -r -p "ffmpeg não encontrado. Instalar agora com Homebrew (brew install ffmpeg-full)? [s/N] " r
+    if [[ "$r" =~ ^[sS]$ ]]; then brew install ffmpeg-full && brew link --force ffmpeg-full; else echo "Instale o ffmpeg e rode de novo."; exit 1; fi
   else
-    echo "Instale o ffmpeg (Mac: brew install ffmpeg · Ubuntu: sudo apt install ffmpeg) e rode de novo."
+    echo "Instale o ffmpeg (Mac: brew install ffmpeg-full && brew link --force ffmpeg-full · Ubuntu: sudo apt install ffmpeg) e rode de novo."
     exit 1
   fi
 fi
 echo "ffmpeg: $(ffmpeg -version | head -1)"
+if ! ffmpeg -hide_banner -filters 2>/dev/null | grep -qE '^ *[A-Z.]+ +ass +'; then
+  echo "Este ffmpeg não tem o filtro de legendas (libass)."
+  [ "$(uname)" = "Darwin" ] && echo "No Mac: brew uninstall ffmpeg; brew install ffmpeg-full && brew link --force ffmpeg-full"
+  exit 1
+fi
 
 # 3. Ambiente Python isolado em .venv
 [ -d .venv ] || "$PY" -m venv .venv

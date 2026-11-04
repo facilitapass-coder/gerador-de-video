@@ -1,0 +1,58 @@
+{
+ "falas": [
+  [
+   "a",
+   626,
+   5.95,
+   20.8
+  ],
+  [
+   "b",
+   626,
+   29.5,
+   46.2
+  ],
+  [
+   "c",
+   626,
+   51.2,
+   55.2
+  ],
+  [
+   "d",
+   626,
+   59.7,
+   61.75
+  ],
+  [
+   "e",
+   626,
+   80.5,
+   96.2
+  ]
+ ],
+ "reel": {
+  "gancho": "Me falaram de um toboágua escondido nesse hotel",
+  "etiqueta": "Hotel Xcaret México",
+  "final1": "Hotel Xcaret México",
+  "final2": "Você desceria?",
+  "final3": "Me conta nos comentários"
+ },
+ "id": "r22",
+ "troca": {
+  "xcaret": "Xcaret",
+  "tubo": "tobo",
+  "tobó": "tobo",
+  "feceria": "livre",
+  "pacietária": "faixa etária",
+  "pachanguéria": "Paxanguería",
+  "la": "La",
+  "sufruindo": "usufruindo"
+ },
+ "frases": {
+  "tobo a água": "toboágua",
+  "tobo águas": "toboáguas",
+  "não quando diz": "não condiz"
+ },
+ "remove": []
+}

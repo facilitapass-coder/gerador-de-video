@@ -1,0 +1,562 @@
+{
+ "total": 962,
+ "linha": [
+  {
+   "nome": "a",
+   "quadros": 123,
+   "inicio": 0
+  },
+  {
+   "nome": "b",
+   "quadros": 193,
+   "inicio": 123
+  },
+  {
+   "nome": "c",
+   "quadros": 202,
+   "inicio": 316
+  },
+  {
+   "nome": "d",
+   "quadros": 214,
+   "inicio": 518
+  },
+  {
+   "nome": "e1",
+   "quadros": 100,
+   "inicio": 732
+  },
+  {
+   "nome": "e2",
+   "quadros": 35,
+   "inicio": 832
+  },
+  {
+   "nome": "e3",
+   "quadros": 95,
+   "inicio": 867
+  }
+ ],
+ "grupos": [
+  [
+   {
+    "quadro": 1,
+    "texto": "tem"
+   },
+   {
+    "quadro": 3,
+    "texto": "que"
+   },
+   {
+    "quadro": 5,
+    "texto": "fazer"
+   }
+  ],
+  [
+   {
+    "quadro": 10,
+    "texto": "check-out"
+   },
+   {
+    "quadro": 23,
+    "texto": "até"
+   }
+  ],
+  [
+   {
+    "quadro": 28,
+    "texto": "meio-dia"
+   }
+  ],
+  [
+   {
+    "quadro": 42,
+    "texto": "mas"
+   },
+   {
+    "quadro": 46,
+    "texto": "o"
+   },
+   {
+    "quadro": 48,
+    "texto": "meu"
+   }
+  ],
+  [
+   {
+    "quadro": 52,
+    "texto": "voo"
+   },
+   {
+    "quadro": 58,
+    "texto": "ele"
+   },
+   {
+    "quadro": 63,
+    "texto": "é"
+   }
+  ],
+  [
+   {
+    "quadro": 64,
+    "texto": "só"
+   },
+   {
+    "quadro": 67,
+    "texto": "no"
+   },
+   {
+    "quadro": 70,
+    "texto": "final"
+   }
+  ],
+  [
+   {
+    "quadro": 78,
+    "texto": "da"
+   },
+   {
+    "quadro": 81,
+    "texto": "tarde"
+   }
+  ],
+  [
+   {
+    "quadro": 95,
+    "texto": "seis"
+   },
+   {
+    "quadro": 100,
+    "texto": "horas"
+   },
+   {
+    "quadro": 106,
+    "texto": "da"
+   }
+  ],
+  [
+   {
+    "quadro": 109,
+    "texto": "tarde"
+   }
+  ],
+  [
+   {
+    "quadro": 124,
+    "texto": "aí"
+   },
+   {
+    "quadro": 128,
+    "texto": "você"
+   },
+   {
+    "quadro": 136,
+    "texto": "vai"
+   }
+  ],
+  [
+   {
+    "quadro": 144,
+    "texto": "ter"
+   },
+   {
+    "quadro": 149,
+    "texto": "o"
+   },
+   {
+    "quadro": 151,
+    "texto": "apoio"
+   }
+  ],
+  [
+   {
+    "quadro": 160,
+    "texto": "da"
+   },
+   {
+    "quadro": 163,
+    "texto": "sala"
+   },
+   {
+    "quadro": 170,
+    "texto": "de"
+   }
+  ],
+  [
+   {
+    "quadro": 175,
+    "texto": "hospitalidade"
+   },
+   {
+    "quadro": 195,
+    "texto": "para"
+   }
+  ],
+  [
+   {
+    "quadro": 201,
+    "texto": "você"
+   },
+   {
+    "quadro": 207,
+    "texto": "poder"
+   },
+   {
+    "quadro": 215,
+    "texto": "deixar"
+   }
+  ],
+  [
+   {
+    "quadro": 224,
+    "texto": "suas"
+   },
+   {
+    "quadro": 230,
+    "texto": "bagagens"
+   }
+  ],
+  [
+   {
+    "quadro": 247,
+    "texto": "poder"
+   },
+   {
+    "quadro": 255,
+    "texto": "tomar"
+   },
+   {
+    "quadro": 263,
+    "texto": "um"
+   }
+  ],
+  [
+   {
+    "quadro": 267,
+    "texto": "banho"
+   },
+   {
+    "quadro": 275,
+    "texto": "e"
+   },
+   {
+    "quadro": 279,
+    "texto": "ter"
+   }
+  ],
+  [
+   {
+    "quadro": 283,
+    "texto": "uma"
+   },
+   {
+    "quadro": 287,
+    "texto": "sala"
+   },
+   {
+    "quadro": 295,
+    "texto": "de"
+   }
+  ],
+  [
+   {
+    "quadro": 299,
+    "texto": "descanso"
+   }
+  ],
+  [
+   {
+    "quadro": 317,
+    "texto": "você"
+   },
+   {
+    "quadro": 324,
+    "texto": "já"
+   },
+   {
+    "quadro": 328,
+    "texto": "entregou"
+   }
+  ],
+  [
+   {
+    "quadro": 343,
+    "texto": "o"
+   },
+   {
+    "quadro": 345,
+    "texto": "seu"
+   },
+   {
+    "quadro": 352,
+    "texto": "quarto"
+   }
+  ],
+  [
+   {
+    "quadro": 367,
+    "texto": "continua"
+   }
+  ],
+  [
+   {
+    "quadro": 383,
+    "texto": "desfrutando"
+   },
+   {
+    "quadro": 398,
+    "texto": "da"
+   }
+  ],
+  [
+   {
+    "quadro": 402,
+    "texto": "estrutura"
+   },
+   {
+    "quadro": 417,
+    "texto": "do"
+   },
+   {
+    "quadro": 422,
+    "texto": "hotel"
+   }
+  ],
+  [
+   {
+    "quadro": 432,
+    "texto": "comida"
+   }
+  ],
+  [
+   {
+    "quadro": 446,
+    "texto": "tudo"
+   },
+   {
+    "quadro": 453,
+    "texto": "incluso"
+   }
+  ],
+  [
+   {
+    "quadro": 468,
+    "texto": "você"
+   },
+   {
+    "quadro": 475,
+    "texto": "não"
+   },
+   {
+    "quadro": 480,
+    "texto": "perde"
+   }
+  ],
+  [
+   {
+    "quadro": 488,
+    "texto": "o"
+   },
+   {
+    "quadro": 490,
+    "texto": "all-inclusive"
+   }
+  ],
+  [
+   {
+    "quadro": 519,
+    "texto": "Com"
+   },
+   {
+    "quadro": 529,
+    "texto": "esse"
+   },
+   {
+    "quadro": 543,
+    "texto": "papel"
+   }
+  ],
+  [
+   {
+    "quadro": 560,
+    "texto": "aqui"
+   }
+  ],
+  [
+   {
+    "quadro": 582,
+    "texto": "eu"
+   },
+   {
+    "quadro": 589,
+    "texto": "tenho"
+   },
+   {
+    "quadro": 607,
+    "texto": "acesso"
+   }
+  ],
+  [
+   {
+    "quadro": 629,
+    "texto": "a"
+   },
+   {
+    "quadro": 631,
+    "texto": "continuar"
+   },
+   {
+    "quadro": 648,
+    "texto": "comendo"
+   }
+  ],
+  [
+   {
+    "quadro": 676,
+    "texto": "desfrutando"
+   },
+   {
+    "quadro": 696,
+    "texto": "de"
+   },
+   {
+    "quadro": 703,
+    "texto": "toda"
+   }
+  ],
+  [
+   {
+    "quadro": 710,
+    "texto": "a"
+   },
+   {
+    "quadro": 712,
+    "texto": "estrutura"
+   }
+  ],
+  [
+   {
+    "quadro": 733,
+    "texto": "também"
+   },
+   {
+    "quadro": 745,
+    "texto": "pode"
+   },
+   {
+    "quadro": 754,
+    "texto": "ser"
+   }
+  ],
+  [
+   {
+    "quadro": 760,
+    "texto": "usado"
+   },
+   {
+    "quadro": 771,
+    "texto": "quando"
+   },
+   {
+    "quadro": 786,
+    "texto": "você"
+   }
+  ],
+  [
+   {
+    "quadro": 793,
+    "texto": "chega"
+   }
+  ],
+  [
+   {
+    "quadro": 805,
+    "texto": "antecipadamente"
+   }
+  ],
+  [
+   {
+    "quadro": 832,
+    "texto": "o"
+   },
+   {
+    "quadro": 833,
+    "texto": "quarto"
+   },
+   {
+    "quadro": 841,
+    "texto": "libera"
+   }
+  ],
+  [
+   {
+    "quadro": 849,
+    "texto": "somente"
+   },
+   {
+    "quadro": 859,
+    "texto": "às"
+   },
+   {
+    "quadro": 860,
+    "texto": "três"
+   }
+  ],
+  [
+   {
+    "quadro": 867,
+    "texto": "mas"
+   },
+   {
+    "quadro": 869,
+    "texto": "a"
+   },
+   {
+    "quadro": 870,
+    "texto": "gente"
+   }
+  ],
+  [
+   {
+    "quadro": 879,
+    "texto": "já"
+   },
+   {
+    "quadro": 882,
+    "texto": "vai"
+   },
+   {
+    "quadro": 886,
+    "texto": "usufruir"
+   }
+  ],
+  [
+   {
+    "quadro": 904,
+    "texto": "da"
+   },
+   {
+    "quadro": 907,
+    "texto": "estrutura"
+   },
+   {
+    "quadro": 924,
+    "texto": "desde"
+   }
+  ],
+  [
+   {
+    "quadro": 934,
+    "texto": "o"
+   },
+   {
+    "quadro": 935,
+    "texto": "primeiro"
+   },
+   {
+    "quadro": 947,
+    "texto": "momento"
+   }
+  ]
+ ]
+}
