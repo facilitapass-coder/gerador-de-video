@@ -22,13 +22,13 @@ Tudo roda no computador do cliente. A IA usa a assinatura ou a chave de API do *
 No Claude Code:
 
 ```
-/plugin marketplace add <endereço do repositório do plugin>
+/plugin marketplace add facilitapass-coder/facilita-studio
 /plugin install facilita-studio@facilita-studio
 ```
 
 Depois, numa conversa: **"quero começar o estúdio"**. A skill `comecar` confere o computador, cria a pasta do estúdio e monta o kit de marca.
 
-Para testar localmente, a partir desta pasta: `/plugin marketplace add ./plugin/facilita-studio`.
+O repositório é privado: o cliente precisa estar logado no GitHub com uma conta convidada como colaboradora (Settings → Collaborators). Para testar localmente: `/plugin marketplace add <caminho da pasta do plugin>`.
 
 ## Skills
 
