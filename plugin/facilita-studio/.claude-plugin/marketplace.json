@@ -1,0 +1,15 @@
+{
+  "name": "facilita-studio",
+  "owner": { "name": "Facilita Pass" },
+  "metadata": { "description": "Facilita Studio: estúdio de conteúdo para redes sociais dentro do Claude.", "version": "0.1.0" },
+  "plugins": [
+    {
+      "name": "facilita-studio",
+      "source": "./",
+      "description": "Reels, tutoriais com gravação de tela, artes, áudio, roteiros e anúncios Meta com a marca de cada cliente.",
+      "version": "0.1.0",
+      "author": { "name": "Facilita Pass" },
+      "category": "productivity"
+    }
+  ]
+}

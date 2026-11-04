@@ -1,0 +1,25 @@
+{
+  "nome": "Minha Marca",
+  "nicho": "Descreva em uma frase o que a empresa vende e para quem.",
+  "instagram": "@minhamarca",
+  "whatsapp": "",
+  "site": "",
+  "cores": {
+    "primaria": "#0D2D5E",
+    "destaque": "#E8572A",
+    "clara": "#F4ECE0",
+    "alerta": "#FF3B30",
+    "legenda_destaque": "#FFD23F"
+  },
+  "fonte": {
+    "familia": "Poppins",
+    "arquivos": {}
+  },
+  "logo": null,
+  "tom": "Direto, próximo e confiável. No máximo 2 emojis por texto.",
+  "palavras_destaque": [],
+  "dicionario": [],
+  "frases_proibidas": [],
+  "regras": [],
+  "cta_padrao": "Chama a gente no WhatsApp"
+}

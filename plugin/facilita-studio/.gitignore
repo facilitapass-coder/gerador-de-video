@@ -1,0 +1,6 @@
+node_modules
+.DS_Store
+modelo/projetos/
+modelo/public/pecas/*
+!modelo/public/pecas/.gitkeep
+modelo/out

@@ -1,0 +1,6 @@
+{
+  "duracao": 10,
+  "cenas": [
+    { "tipo": "final", "de": 0, "ate": 10, "linhas": [{ "texto": "SEU REELS" }, { "texto": "COMEÇA AQUI", "cor": "legenda" }], "rodape": "Peça para o Claude montar o primeiro", "icones": ["salvar", "compartilhar"], "logo": true }
+  ]
+}

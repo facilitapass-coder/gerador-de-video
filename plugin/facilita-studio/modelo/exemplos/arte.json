@@ -1,0 +1,11 @@
+{
+  "largura": 1080,
+  "altura": 1350,
+  "etiqueta": "OFERTA DA SEMANA",
+  "etiquetaDireita": "Vagas limitadas",
+  "titulo": "Seu título aqui",
+  "titulo2": "com a segunda linha",
+  "card": { "linha1": "O que está incluso", "prefixo": "a partir de 10x de", "valor": "R$ 99,90", "linha2": "sem juros", "linha3": "condições no WhatsApp" },
+  "rodape": "Valores sujeitos a alteração.\nConsulte condições.",
+  "logo": true
+}
