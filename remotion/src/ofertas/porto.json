@@ -1,0 +1,495 @@
+{
+ "pasta": "porto",
+ "fimFala": 25.67,
+ "gancho": {
+  "texto": "🔥 ACABOU DE LIBERAR",
+  "ate": 1.39
+ },
+ "titulo": {
+  "texto": "PORTO DE GALINHAS",
+  "sub": "Pernambuco",
+  "etiqueta": "📍 PORTO DE GALINHAS · PE",
+  "em": 1.39
+ },
+ "cortes": [
+  1.39,
+  2.76,
+  5.47,
+  7.22,
+  9.03,
+  11.68,
+  14.42,
+  15.84,
+  17.2,
+  19.3,
+  21.41,
+  24.29
+ ],
+ "destaques": [
+  "acabou",
+  "liberar",
+  "porto",
+  "galinhas",
+  "5.800",
+  "duas",
+  "pessoas",
+  "15",
+  "juros",
+  "aéreo",
+  "maringá",
+  "meia-pensão",
+  "café",
+  "manhã",
+  "jantar",
+  "cinco",
+  "noites",
+  "solar",
+  "pé",
+  "areia",
+  "demais",
+  "black",
+  "esgota",
+  "rápido",
+  "tempo"
+ ],
+ "palavras": [
+  {
+   "w": "Acabou",
+   "i": 0.02,
+   "f": 0.72
+  },
+  {
+   "w": "de",
+   "i": 0.72,
+   "f": 0.76
+  },
+  {
+   "w": "liberar",
+   "i": 0.76,
+   "f": 1.39
+  },
+  {
+   "w": "Porto",
+   "i": 1.39,
+   "f": 1.86
+  },
+  {
+   "w": "de",
+   "i": 1.86,
+   "f": 2.08
+  },
+  {
+   "w": "Galinhas",
+   "i": 2.08,
+   "f": 2.79
+  },
+  {
+   "w": "5.800",
+   "i": 2.79,
+   "f": 4.0
+  },
+  {
+   "w": "para",
+   "i": 4.0,
+   "f": 4.35
+  },
+  {
+   "w": "duas",
+   "i": 4.35,
+   "f": 4.7
+  },
+  {
+   "w": "pessoas,",
+   "i": 4.7,
+   "f": 5.4
+  },
+  {
+   "w": "parcelamento",
+   "i": 5.4,
+   "f": 5.82
+  },
+  {
+   "w": "até",
+   "i": 5.82,
+   "f": 6.12
+  },
+  {
+   "w": "15",
+   "i": 6.12,
+   "f": 6.4
+  },
+  {
+   "w": "vezes",
+   "i": 6.4,
+   "f": 6.71
+  },
+  {
+   "w": "sem",
+   "i": 6.71,
+   "f": 6.8
+  },
+  {
+   "w": "juros,",
+   "i": 6.8,
+   "f": 7.26
+  },
+  {
+   "w": "aéreo",
+   "i": 7.26,
+   "f": 7.71
+  },
+  {
+   "w": "saindo",
+   "i": 7.71,
+   "f": 8.25
+  },
+  {
+   "w": "de",
+   "i": 8.25,
+   "f": 8.43
+  },
+  {
+   "w": "Maringá,",
+   "i": 8.43,
+   "f": 9.24
+  },
+  {
+   "w": "hospedagem",
+   "i": 9.24,
+   "f": 10.14
+  },
+  {
+   "w": "com",
+   "i": 10.14,
+   "f": 10.41
+  },
+  {
+   "w": "meia-pensão,",
+   "i": 10.41,
+   "f": 11.62
+  },
+  {
+   "w": "tá?",
+   "i": 11.62,
+   "f": 11.64
+  },
+  {
+   "w": "Então,",
+   "i": 11.64,
+   "f": 11.68
+  },
+  {
+   "w": "café",
+   "i": 11.68,
+   "f": 11.88
+  },
+  {
+   "w": "da",
+   "i": 11.88,
+   "f": 12.0
+  },
+  {
+   "w": "manhã",
+   "i": 12.0,
+   "f": 12.47
+  },
+  {
+   "w": "e",
+   "i": 12.47,
+   "f": 12.66
+  },
+  {
+   "w": "jantar",
+   "i": 12.66,
+   "f": 13.5
+  },
+  {
+   "w": "garantido,",
+   "i": 13.5,
+   "f": 14.42
+  },
+  {
+   "w": "cinco",
+   "i": 14.42,
+   "f": 14.71
+  },
+  {
+   "w": "noites",
+   "i": 14.71,
+   "f": 15.14
+  },
+  {
+   "w": "de",
+   "i": 15.14,
+   "f": 15.18
+  },
+  {
+   "w": "hospedagem",
+   "i": 15.18,
+   "f": 15.73
+  },
+  {
+   "w": "no",
+   "i": 15.73,
+   "f": 15.84
+  },
+  {
+   "w": "Solar",
+   "i": 15.84,
+   "f": 16.26
+  },
+  {
+   "w": "Porto",
+   "i": 16.26,
+   "f": 16.41
+  },
+  {
+   "w": "de",
+   "i": 16.41,
+   "f": 16.52
+  },
+  {
+   "w": "Galinhas,",
+   "i": 16.52,
+   "f": 17.21
+  },
+  {
+   "w": "hotel",
+   "i": 17.21,
+   "f": 17.45
+  },
+  {
+   "w": "pé",
+   "i": 17.45,
+   "f": 17.7
+  },
+  {
+   "w": "na",
+   "i": 17.7,
+   "f": 17.94
+  },
+  {
+   "w": "areia,",
+   "i": 17.94,
+   "f": 18.18
+  },
+  {
+   "w": "top",
+   "i": 18.18,
+   "f": 18.52
+  },
+  {
+   "w": "demais.",
+   "i": 18.52,
+   "f": 19.26
+  },
+  {
+   "w": "Então,",
+   "i": 19.26,
+   "f": 20.02
+  },
+  {
+   "w": "aproveita,",
+   "i": 20.02,
+   "f": 20.92
+  },
+  {
+   "w": "tá?",
+   "i": 20.92,
+   "f": 21.42
+  },
+  {
+   "w": "Promoção",
+   "i": 21.42,
+   "f": 22.05
+  },
+  {
+   "w": "de",
+   "i": 22.05,
+   "f": 22.06
+  },
+  {
+   "w": "Black,",
+   "i": 22.06,
+   "f": 22.5
+  },
+  {
+   "w": "esgota",
+   "i": 22.5,
+   "f": 22.89
+  },
+  {
+   "w": "super",
+   "i": 22.89,
+   "f": 23.26
+  },
+  {
+   "w": "rápido,",
+   "i": 23.26,
+   "f": 23.71
+  },
+  {
+   "w": "então,",
+   "i": 23.71,
+   "f": 24.15
+  },
+  {
+   "w": "não",
+   "i": 24.15,
+   "f": 24.34
+  },
+  {
+   "w": "perde",
+   "i": 24.34,
+   "f": 24.66
+  },
+  {
+   "w": "tempo.",
+   "i": 24.66,
+   "f": 25.26
+  }
+ ],
+ "cards": [
+  {
+   "de": 2.7,
+   "ate": 7.2,
+   "linhas": [
+    {
+     "texto": "a partir de",
+     "tamanho": 32,
+     "peso": 500
+    },
+    {
+     "em": 2.76,
+     "partes": [
+      {
+       "texto": "R$ 5.800",
+       "cor": "laranja",
+       "tamanho": 118
+      }
+     ]
+    },
+    {
+     "em": 3.98,
+     "texto": "para 2 pessoas 💑",
+     "tamanho": 40
+    },
+    {
+     "em": 5.47,
+     "partes": [
+      {
+       "texto": "até 15x",
+       "cor": "marinho",
+       "tamanho": 52
+      },
+      {
+       "texto": "sem juros",
+       "cor": "laranja",
+       "tamanho": 52
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "de": 7.2,
+   "ate": 14.4,
+   "rotulo": "O PACOTE INCLUI",
+   "linhas": [
+    {
+     "em": 7.22,
+     "icone": "✈️",
+     "texto": "Aéreo saindo de Maringá"
+    },
+    {
+     "em": 10.1,
+     "icone": "🍽️",
+     "texto": "Meia-pensão",
+     "sub": "café da manhã e jantar garantidos"
+    }
+   ]
+  },
+  {
+   "de": 14.4,
+   "ate": 19.3,
+   "fundo": "marinho",
+   "rotulo": "HOSPEDAGEM",
+   "linhas": [
+    {
+     "em": 14.42,
+     "icone": "🌙",
+     "texto": "5 noites",
+     "cor": "bege",
+     "tamanho": 40
+    },
+    {
+     "em": 15.84,
+     "partes": [
+      {
+       "texto": "Solar Porto de Galinhas",
+       "cor": "branco",
+       "tamanho": 54
+      }
+     ]
+    },
+    {
+     "em": 17.2,
+     "icone": "🏖️",
+     "texto": "Hotel pé na areia",
+     "cor": "laranja",
+     "tamanho": 40
+    }
+   ]
+  },
+  {
+   "de": 19.3,
+   "ate": 24.2,
+   "fundo": "preto",
+   "linhas": [
+    {
+     "em": 19.3,
+     "partes": [
+      {
+       "texto": "BLACK",
+       "cor": "branco",
+       "tamanho": 96,
+       "peso": 700
+      },
+      {
+       "texto": "Facilita Pass",
+       "cor": "laranja",
+       "tamanho": 44,
+       "peso": 600
+      }
+     ]
+    },
+    {
+     "em": 21.41,
+     "texto": "Promoção de Black",
+     "cor": "branco",
+     "tamanho": 40
+    },
+    {
+     "em": 22.55,
+     "icone": "⚡",
+     "texto": "Esgota super rápido",
+     "cor": "laranja",
+     "tamanho": 40
+    }
+   ]
+  }
+ ],
+ "chamada": {
+  "de": 24.2,
+  "botaoEm": 24.29,
+  "texto": "Não perde tempo 👇",
+  "botao": "Chama no WhatsApp"
+ },
+ "final": {
+  "linha1": "Porto de Galinhas · 5 noites",
+  "destaque": "R$ 5.800",
+  "linha3": "para 2 pessoas · até 15x sem juros",
+  "rodape": "Valores sujeitos a alteração e disponibilidade."
+ },
+ "espelhar": true
+}

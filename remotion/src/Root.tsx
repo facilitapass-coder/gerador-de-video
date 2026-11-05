@@ -12,6 +12,8 @@ import { metadadosOrlando, OrlandoEstatico } from "./OrlandoEstatico";
 import { PromoDisney } from "./PromoDisney";
 import { DURACAO_VENTO, VentoMaringa } from "./VentoMaringa";
 import { DURACAO_GRAMADO, GramadoOferta } from "./GramadoOferta";
+import { metadadosOferta, OfertaFala, OfertaProps } from "./OfertaFala";
+import ofertaPorto from "./ofertas/porto.json";
 import { metadadosStory, Story } from "./Story";
 
 export const RemotionRoot: React.FC = () => {
@@ -98,6 +100,7 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{ foto: "IMG_8170.jpg", data: "20/10", focoY: 25 }}
       />
       <Composition id="BlackFacilita" component={BlackFacilita} durationInFrames={906} fps={30} width={1080} height={1920} defaultProps={{ comMusica: true }} />
+      <Composition id="OfertaPorto" component={OfertaFala} fps={30} width={1080} height={1920} durationInFrames={800} defaultProps={ofertaPorto as OfertaProps} calculateMetadata={metadadosOferta} />
       <Composition id="GramadoOferta" component={GramadoOferta} durationInFrames={DURACAO_GRAMADO} fps={30} width={1080} height={1920} />
       <Composition id="VentoMaringa" component={VentoMaringa} durationInFrames={DURACAO_VENTO} fps={30} width={1080} height={1920} />
       <Composition id="Ad02" component={Ad02} durationInFrames={771} fps={30} width={1080} height={1920} defaultProps={{ comMusica: true }} />
