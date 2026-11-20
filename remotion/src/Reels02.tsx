@@ -14,6 +14,7 @@ import {
 } from "remotion";
 import { clamp, Degrade, Sobe, sombra } from "./AllFunInclusive";
 import { BEGE, FONTE, LARANJA, MARINHO, SEGURA } from "./marca";
+import { Flash, Trilha } from "./fala";
 import dados from "./r02-dados.json";
 
 // Reels 02 · La Casa de la Playa, narrado. Planos e tempos: scripts/preparar_r02.py
@@ -186,6 +187,7 @@ export const Reels02: React.FC = () => {
         {dados.linha.map((p, i) => (
           <Series.Sequence key={p.arquivo} name={p.t2 || p.t1 || `Plano ${i + 1}`} durationInFrames={p.quadros} premountFor={fps}>
             <Plano arquivo={p.arquivo} duracao={p.quadros} i={i} />
+            {i > 0 ? <Flash /> : null}
             {i === ultimo ? <Final /> : <Degrade />}
             {i > 1 && i < ultimo ? <Texto t1={p.t1} t2={p.t2} /> : null}
           </Series.Sequence>
@@ -195,6 +197,7 @@ export const Reels02: React.FC = () => {
         <Gancho />
       </Sequence>
       <Audio name="Narração" src={staticFile("r02/voz.wav")} premountFor={fps} />
+      <Trilha src="r02/trilha.mp3" inicio={16} fimFala={dados.total - dados.linha[ultimo].quadros} total={dados.total} />
     </AbsoluteFill>
   );
 };

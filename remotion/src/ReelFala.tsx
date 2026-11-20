@@ -13,7 +13,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import { clamp, Sobe, sombra } from "./AllFunInclusive";
-import { DadosFala, Legendas, Trecho } from "./fala";
+import { DadosFala, Legendas, Trecho, Trilha } from "./fala";
 import { BEGE, FONTE, LARANJA, MARINHO, SEGURA } from "./marca";
 
 // Reels de fala real: gancho escrito, trechos com legenda e cartão final com pergunta.
@@ -26,6 +26,8 @@ export type ReelFalaProps = DadosFala & {
   final2: string;
   final3: string;
   linha: { nome: string; quadros: number; inicio: number; mudo: boolean }[];
+  /** Segundo da faixa public/<id>/trilha.mp3 onde a música começa; sem ele, sem música. */
+  musicaInicio?: number;
 };
 
 const FINAL = 96;
@@ -119,7 +121,7 @@ export const ReelFala: React.FC<ReelFalaProps> = (props) => {
       <Series>
         {props.linha.map((t, i) => (
           <Series.Sequence key={t.nome} name={`Trecho ${t.nome}`} durationInFrames={t.quadros} premountFor={fps}>
-            <Trecho src={`${props.id}/fala_${t.nome}.mp4`} zoom={t.mudo || i % 2 === 0 ? 1 : 1.1} duracao={t.quadros} />
+            <Trecho src={`${props.id}/fala_${t.nome}.mp4`} zoom={t.mudo || i % 2 === 0 ? 1 : 1.1} duracao={t.quadros} semFlash={i === 0} />
           </Series.Sequence>
         ))}
         <Series.Sequence name="Cartão final" durationInFrames={FINAL} premountFor={fps}>
@@ -137,6 +139,9 @@ export const ReelFala: React.FC<ReelFalaProps> = (props) => {
         <Gancho texto={props.gancho} />
       </Sequence>
       <Audio name="Fala" src={staticFile(`${props.id}/voz.wav`)} premountFor={fps} />
+      {props.musicaInicio === undefined ? null : (
+        <Trilha src={`${props.id}/trilha.mp3`} inicio={props.musicaInicio} fimFala={props.total} total={props.total + FINAL} />
+      )}
     </AbsoluteFill>
   );
 };

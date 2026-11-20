@@ -14,6 +14,7 @@ import {
 } from "remotion";
 import { clamp, Degrade, Sobe, sombra } from "./AllFunInclusive";
 import { BEGE, FONTE, LARANJA, MARINHO, SEGURA } from "./marca";
+import { Flash, impacto, Trilha } from "./fala";
 import dados from "./r09-dados.json";
 
 // Reels 09 · "Check-out ao meio-dia e voo às seis da tarde?" (fala real + legendas).
@@ -25,7 +26,8 @@ const Trecho: React.FC<{
   readonly arquivo: string;
   readonly zoom?: number;
   readonly duracao: number;
-}> = ({ arquivo, zoom = 1, duracao }) => {
+  readonly semFlash?: boolean;
+}> = ({ arquivo, zoom = 1, duracao, semFlash = false }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   return (
@@ -41,9 +43,10 @@ const Trecho: React.FC<{
           height: "100%",
           filter: "contrast(1.05) saturate(1.1)",
           transformOrigin: "50% 38%",
-          scale: zoom * interpolate(frame, [0, duracao], [1, 1.035], clamp),
+          scale: zoom * interpolate(frame, [0, duracao], [1, 1.035], clamp) * (semFlash ? 1 : impacto(frame)),
         }}
       />
+      {semFlash ? null : <Flash />}
     </AbsoluteFill>
   );
 };
@@ -222,7 +225,7 @@ export const Reels09: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: MARINHO }}>
       <Series>
         <Series.Sequence name="Check-out 12h, voo 18h" durationInFrames={123} premountFor={fps}>
-          <Trecho arquivo="fala_a.mp4" duracao={123} />
+          <Trecho arquivo="fala_a.mp4" duracao={123} semFlash />
           <Gancho />
         </Series.Sequence>
         <Series.Sequence name="Sala de hospitalidade" durationInFrames={193} premountFor={fps}>
@@ -261,6 +264,7 @@ export const Reels09: React.FC = () => {
         <Legendas />
       </Sequence>
       <Audio name="Fala" src={staticFile("r09/voz.wav")} premountFor={fps} />
+      <Trilha src="r09/trilha.mp3" inicio={19} fimFala={962} total={962 + FINAL} />
     </AbsoluteFill>
   );
 };

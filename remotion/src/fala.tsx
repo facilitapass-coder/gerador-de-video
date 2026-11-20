@@ -1,4 +1,4 @@
-import { Video } from "@remotion/media";
+import { Audio, Video } from "@remotion/media";
 import React from "react";
 import {
   AbsoluteFill,
@@ -19,12 +19,51 @@ export type DadosFala = {
   grupos: { quadro: number; texto: string }[][];
 };
 
+/** Zoom de impacto no início de cada corte: entra 7% maior e assenta em 6 quadros. */
+export const impacto = (frame: number) =>
+  interpolate(frame, [0, 6], [1.07, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
+
+/** Flash branco curto que marca o corte. */
+export const Flash: React.FC = () => {
+  const frame = useCurrentFrame();
+  return (
+    <AbsoluteFill
+      style={{ backgroundColor: "white", opacity: interpolate(frame, [0, 4], [0.3, 0], clamp), pointerEvents: "none" }}
+    />
+  );
+};
+
+/**
+ * Música de fundo: baixa durante a fala (12%), sobe no cartão final e some no último segundo.
+ * `inicio` pula a introdução da faixa (segundos).
+ */
+export const Trilha: React.FC<{
+  readonly src: string;
+  readonly inicio: number;
+  readonly fimFala: number;
+  readonly total: number;
+}> = ({ src, inicio, fimFala, total }) => {
+  const { fps } = useVideoConfig();
+  const sobe = Math.min(fimFala + 15, total - 25);
+  return (
+    <Audio
+      name="Música"
+      src={staticFile(src)}
+      trimBefore={Math.round(inicio * fps)}
+      volume={(f) =>
+        interpolate(f, [0, 10, fimFala, sobe, total - 20, total], [0, 0.12, 0.12, 0.4, 0.4, 0], clamp)
+      }
+    />
+  );
+};
+
 /** Trecho de fala em tela cheia; `zoom` alterna o enquadramento para disfarçar o corte. */
 export const Trecho: React.FC<{
   readonly src: string;
   readonly zoom?: number;
   readonly duracao: number;
-}> = ({ src, zoom = 1, duracao }) => {
+  readonly semFlash?: boolean;
+}> = ({ src, zoom = 1, duracao, semFlash = false }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   return (
@@ -40,9 +79,10 @@ export const Trecho: React.FC<{
           height: "100%",
           filter: "contrast(1.05) saturate(1.1)",
           transformOrigin: "50% 38%",
-          scale: zoom * interpolate(frame, [0, duracao], [1, 1.035], clamp),
+          scale: zoom * interpolate(frame, [0, duracao], [1, 1.035], clamp) * (semFlash ? 1 : impacto(frame)),
         }}
       />
+      {semFlash ? null : <Flash />}
     </AbsoluteFill>
   );
 };

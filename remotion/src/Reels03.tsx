@@ -12,7 +12,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import { clamp, Degrade } from "./AllFunInclusive";
-import { Apoio, Legendas, Trecho } from "./fala";
+import { Apoio, Legendas, Trecho, Trilha } from "./fala";
 import { BEGE, FONTE, MARINHO, SEGURA } from "./marca";
 import dados from "./r03-dados.json";
 
@@ -104,7 +104,7 @@ export const Reels03: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: MARINHO }}>
       <Series>
         <Series.Sequence name="Agora, oficialmente, Xpert Xcaret" durationInFrames={92} premountFor={fps}>
-          <Trecho src="r03/fala_a.mp4" duracao={92} />
+          <Trecho src="r03/fala_a.mp4" duracao={92} semFlash />
         </Series.Sequence>
         <Series.Sequence name="O que o diploma representa" durationInFrames={243} premountFor={fps}>
           <Trecho src="r03/fala_b.mp4" zoom={1.12} duracao={243} />
@@ -146,6 +146,7 @@ export const Reels03: React.FC = () => {
         <SeloGancho />
       </Sequence>
       <Audio name="Fala" src={staticFile("r03/voz.wav")} premountFor={fps} />
+      <Trilha src="r03/trilha.mp3" inicio={14} fimFala={1006} total={1006 + FINAL} />
     </AbsoluteFill>
   );
 };
