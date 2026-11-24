@@ -11,7 +11,7 @@ TMP="$(mktemp -d)"
 (cd "$ORIGEM" && tar --exclude node_modules --exclude ./modelo/projetos --exclude './modelo/public/pecas/*' \
   --exclude out --exclude .DS_Store --exclude .git -cf - .) | (mkdir -p "$TMP/facilita-studio" && cd "$TMP/facilita-studio" && tar -xf -)
 # nada de mídia ou segredo dentro do pacote
-if find "$TMP" \( -iname '*.mp4' -o -iname '*.mov' -o -iname '*.wav' -o -iname '.env' \) | grep -q .; then
+if find "$TMP" \( -iname '*.mp4' -o -iname '*.mov' -o -iname '*.wav' -o -iname '.env' \) | grep . >/dev/null; then
   echo "Encontrei mídia ou .env no pacote. Abortei."; exit 1
 fi
 ARQ="$DIST/facilita-studio-v$VERSAO.zip"

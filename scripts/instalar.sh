@@ -33,7 +33,7 @@ if ! command -v ffmpeg >/dev/null 2>&1 || ! command -v ffprobe >/dev/null 2>&1; 
   fi
 fi
 echo "ffmpeg: $(ffmpeg -version | head -1)"
-if ! ffmpeg -hide_banner -filters 2>/dev/null | grep -qE '^ *[A-Z.]+ +ass +'; then
+if ! ffmpeg -hide_banner -filters 2>/dev/null | grep -E '^ *[A-Z.]+ +ass +' >/dev/null; then
   echo "Este ffmpeg não tem o filtro de legendas (libass)."
   [ "$(uname)" = "Darwin" ] && echo "No Mac: brew uninstall ffmpeg; brew install ffmpeg-full && brew link --force ffmpeg-full"
   exit 1

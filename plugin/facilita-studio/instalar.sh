@@ -19,7 +19,7 @@ fi
 echo "Plugin guardado em: $DESTINO (não apague esta pasta)"
 
 if command -v claude >/dev/null 2>&1; then
-  if claude plugin marketplace list 2>/dev/null | grep -q "facilita-studio"; then
+  if claude plugin marketplace list 2>/dev/null | grep "facilita-studio" >/dev/null; then
     claude plugin marketplace update facilita-studio
   else
     claude plugin marketplace add "$DESTINO"
